@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cyberbob57.github.io/cyberbob-tracklists/sitemap.xml
