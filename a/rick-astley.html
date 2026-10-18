@@ -23,6 +23,10 @@ h2{font-size:20px;margin:28px 0 12px}.meta{color:var(--muted);font-size:14px;mar
 .pitch{background:var(--card);border:1px solid var(--line);border-left:3px solid var(--rouge);border-radius:12px;padding:12px 14px;margin:0 0 14px;color:var(--muted)}
 .video{position:relative;aspect-ratio:16/9;margin:4px 0 16px;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line),0 12px 40px rgba(0,0,0,.6),0 0 30px rgba(46,168,255,.15)}
 .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.lite{all:unset;cursor:pointer;position:absolute;inset:0;display:block}.lite img{width:100%;height:100%;object-fit:cover;display:block}
+.play{position:absolute;left:50%;top:50%;width:78px;height:54px;margin:-27px 0 0 -39px;border-radius:16px;background:var(--yt);box-shadow:0 6px 24px rgba(255,0,51,.5);transition:transform .15s}
+.play::after{content:"";position:absolute;left:31px;top:15px;border-style:solid;border-width:12px 0 12px 20px;border-color:transparent transparent transparent #fff}
+.lite:hover .play{transform:scale(1.1)}
 ol.tl{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--card)}
 ol.tl li{display:flex;gap:12px;align-items:baseline;padding:10px 14px;border-top:1px solid var(--line)}ol.tl li:first-child{border-top:0}
 ol.tl li:hover{background:var(--card2)}
