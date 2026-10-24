@@ -1,0 +1,39 @@
+{
+ "name": "CyberBob in The Mix — les tracklists",
+ "short_name": "CyberBob",
+ "lang": "fr",
+ "description": "Les mix de CyberBob in The Mix, chaque titre à la minute exacte, la radio et le mix du vendredi.",
+ "start_url": "/?source=appli",
+ "scope": "/",
+ "display": "standalone",
+ "background_color": "#0b0f1d",
+ "theme_color": "#1d1450",
+ "icons": [
+  {
+   "src": "/icone-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "/icone-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "/icone-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ],
+ "shortcuts": [
+  {
+   "name": "📻 La radio",
+   "url": "/radio/"
+  },
+  {
+   "name": "Le mix du vendredi",
+   "url": "/vendredi/"
+  }
+ ]
+}
