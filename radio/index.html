@@ -247,7 +247,7 @@ function charger(){liste();if(P&&ok){P.loadPlaylist({playlist:ids});P.setLoop(tr
 function affiche(){const l=$('#lecteur .lite');if(l&&ids[0])l.style.backgroundImage='linear-gradient(180deg,rgba(0,0,0,.2),rgba(0,0,0,.6)),url(https://i.ytimg.com/vi/'+ids[0]+'/hqdefault.jpg)';}
 function lancer(){if(P||$('#lecteur iframe'))return;if(!ids.length)liste();
  $('#lecteur').innerHTML='<iframe id="yt" src="https://www.youtube-nocookie.com/embed/'+ids[0]+'?autoplay=1&rel=0&playsinline=1&loop=1&enablejsapi=1&origin='+
-  encodeURIComponent(location.origin)+'&playlist='+ids.slice(1).join(',')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Radio CyberBob"></iframe>';
+  encodeURIComponent(location.origin)+'&playlist='+ids.join(',')+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="Radio CyberBob"></iframe>';
  window.onYouTubeIframeAPIReady=()=>{P=new YT.Player('yt',{events:{onReady:()=>{ok=true;try{P.setLoop(true);}catch(_){}},
   onStateChange:e=>{if(e.data===1)enCours();},onError:()=>{try{P.nextVideo();}catch(_){}}}});};
  if(window.YT&&YT.Player)onYouTubeIframeAPIReady();else{const s=document.createElement('script');s.src='https://www.youtube.com/iframe_api';document.head.appendChild(s);}}
