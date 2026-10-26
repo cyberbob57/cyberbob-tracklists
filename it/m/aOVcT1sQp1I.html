@@ -257,6 +257,10 @@ box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 22px rgba(90,169,255,.25);background:
 .canal,.card,.une-carte,.pitch,.tuile,.faq-q,.materiel,.citation,.bandeau-monde,.rdv,.facts div,.topmini a,.lien,.compte,ol.tl{border:2px solid var(--bleu)!important}
 /* 26/10/2026, CyberBob : « le bandeau du haut doit avoir une bordure rouge » */
 header.top{border:2px solid var(--rouge)!important;border-image:none!important;border-radius:16px;margin-left:0;margin-right:0}
+/* 26/10/2026, CyberBob : « mets une bordure blanche autour de chercher un titre, on ne le voit pas bien » */
+input.q{border:2px solid rgba(255,255,255,.85)!important;box-shadow:0 0 0 1px rgba(255,255,255,.15),0 0 18px rgba(255,255,255,.22),0 8px 26px rgba(0,0,0,.35)!important;color:#fff!important}
+input.q::placeholder{color:#d6dbea;opacity:1}
+input.q:focus{border-color:#fff!important;box-shadow:0 0 0 3px rgba(90,169,255,.45),0 0 24px rgba(255,255,255,.35)!important}
 /* 26/10/2026, CyberBob : « le fond du bandeau rouge devrait être d'une autre couleur pour qu'on voie bien qu'il s'agit du menu » */
 header.top{background:linear-gradient(120deg,rgba(74,10,38,.94),rgba(38,14,78,.94) 60%,rgba(14,32,84,.94))!important;-webkit-backdrop-filter:blur(14px)!important;backdrop-filter:blur(14px)!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(255,45,85,.25)}
 header.top nav.menu a{color:#e8e2ff}header.top nav.menu a:hover{background:rgba(255,255,255,.12);color:#fff}header.top nav.menu{border-top-color:rgba(255,255,255,.14)!important}
