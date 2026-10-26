@@ -257,6 +257,29 @@ box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 22px rgba(90,169,255,.25);background:
 .canal,.card,.une-carte,.pitch,.tuile,.faq-q,.materiel,.citation,.bandeau-monde,.rdv,.facts div,.topmini a,.lien,.compte,ol.tl{border:2px solid var(--bleu)!important}
 /* 26/10/2026, CyberBob : « le bandeau du haut doit avoir une bordure rouge » */
 header.top{border:2px solid var(--rouge)!important;border-image:none!important;border-radius:16px;margin-left:0;margin-right:0}
+/* 26/10/2026, CyberBob : « le résultat est tout en bas, pas directement en dessous de la recherche, c'est pas normal ». Pendant
+   une recherche, tout ce qui n'est pas la recherche ou « Tous les mix » se cache (les rangées, les pays, les fans s'intercalaient),
+   et les résultats s'affichent tout de suite (l'apparition douce les laissait invisibles tant qu'on n'avait pas défilé). */
+body.en-recherche .wrap>section:not(#mix),body.en-recherche .wrap>.bandeau-monde{display:none!important}
+body.en-recherche #mix{opacity:1!important;transform:none!important}
+/* 26/10/2026 (trois propositions) : 🔎 le titre trouvé sous la carte ; 🎤 la page d'artiste avec les miniatures ; 📜 un pied de page
+   lisible (le quadrillage rose du décor passait derrière son texte). */
+.card .trouve{display:flex;flex-direction:column;gap:3px;margin-top:8px;padding-top:7px;border-top:1px solid rgba(255,255,255,.12)}
+.card .trouve span{font-size:13px;font-weight:700;color:#ff8aa3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.art-mix{display:grid;grid-template-columns:240px minmax(0,1fr);gap:20px;align-items:start;background:var(--card);border:2px solid var(--bleu);
+border-radius:18px;padding:16px;margin:0 0 22px}
+.art-vign{position:relative;display:block;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:#000;box-shadow:0 10px 26px rgba(0,0,0,.45)}
+.art-vign img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.art-vign:hover img{transform:scale(1.06)}.art-vign .play{opacity:.9}
+.art-txt h2{margin-top:2px!important;font-size:19px!important}.art-txt ol.tl{margin:0}
+@media (max-width:640px){.art-mix{grid-template-columns:1fr;padding:12px}}
+footer.site{position:relative;z-index:1;background:linear-gradient(180deg,rgba(9,11,26,.97),rgba(5,6,15,.99))!important;border-top:2px solid var(--bleu)!important;
+box-shadow:0 -10px 30px rgba(0,0,0,.5);margin-left:auto!important;margin-right:auto!important;border-radius:18px 18px 0 0}
+/* 26/10/2026, relecture de toutes les pages : (1) un titre de rubrique qui est un lien (page d'artiste : le nom du mix) ne se
+   souligne pas deux fois sous son trait néon ; (2) le compte à rebours du vendredi ne casse plus en deux sur téléphone. */
+section>h2 a,.tete h2 a,.related h2 a{text-decoration:none;color:#fff}section>h2 a:hover,.tete h2 a:hover,.related h2 a:hover{color:var(--bleu)}
+#compte{white-space:nowrap;font-variant-numeric:tabular-nums}
+@media (max-width:600px){#compte{font-size:clamp(20px,7vw,30px)!important}}
 /* 26/10/2026, CyberBob : « mets une bordure blanche autour de chercher un titre, on ne le voit pas bien » */
 input.q{border:2px solid rgba(255,255,255,.85)!important;box-shadow:0 0 0 1px rgba(255,255,255,.15),0 0 18px rgba(255,255,255,.22),0 8px 26px rgba(0,0,0,.35)!important;color:#fff!important}
 input.q::placeholder{color:#d6dbea;opacity:1}
