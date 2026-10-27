@@ -823,9 +823,8 @@ header.top{flex-wrap:nowrap!important;gap:8px!important;min-height:60px;position
 header.top .brand .nom,header.top .brand .eq,header.top .recherche kbd,header.top .langs{display:none!important}
 header.top .zone-rech{flex:1 1 auto!important;max-width:none!important}header.top .recherche{height:40px!important;padding:0 10px!important}
 header.top .droite{gap:6px!important;margin-left:0!important}.r-burger{display:flex}
-header.top .onair{font-size:0!important;width:40px;padding:0!important;justify-content:center;position:relative}
-header.top .onair::before{content:""!important;position:absolute!important;left:50%!important;top:50%!important;width:10px!important;height:10px!important;margin:-5px 0 0 -5px!important;border-radius:50%!important;background:#fff!important;box-shadow:0 0 8px #fff!important;border:0!important;transform:none!important}
-header.top .onair::after{display:none!important}
+/* 27/10/2026, CyberBob : « un bouton rouge à la place du ON AIR, c'est moche » : sur téléphone aussi, le voyant garde son texte, en petit */
+header.top .onair{font-size:10px!important;padding:0 9px!important;letter-spacing:.04em}
 header.top .brand{order:0}header.top .zone-rech{order:1}header.top .droite{order:2}
 header.top nav.menu{display:none!important}
 body.menu-ouvert header.top nav.menu{display:grid!important;position:absolute;left:0;right:0;top:100%;gap:2px;padding:12px 16px 16px;background:rgba(21,16,42,.98);
@@ -883,16 +882,19 @@ display:flex;flex-direction:column;justify-content:space-between}
 @media (prefers-reduced-motion:reduce){.r-grille-pain .gp-cd{animation:none;transform:translateY(-12px)}.r-grille-pain .gp-vapeur{animation:none;opacity:.6}}
 @media (max-width:640px){.r-grille-pain{display:none}}
 .r-filtres-btn{display:none}
+/* 27/10/2026, CyberBob : « sur téléphone, 3,2 est sur la ligne du dessous ; les 2 premières lignes de titres n'ont pas la même taille ».
+   Safari sur iPhone grossit de lui-même certains textes (« text inflation ») : coupé partout, chaque texte garde la taille prévue. */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 /* 27/10/2026, CyberBob : « sur un téléphone le défilement est trop long, les vignettes prennent trop de place, trouve une solution ».
    Sur téléphone seulement : les derniers mix et les styles glissent de côté au lieu de s'empiler, les vignettes passent à gauche
    en petit, les listes montrent les 5 premiers (le lien « Tout le classement » reste), le grand menu se range en pastilles. */
 @media (max-width:640px){
 .r-chaine-in{padding:16px!important;gap:10px!important}.r-chaine .r-platine{zoom:.62}.r-chaine h1{font-size:24px!important;margin:4px 0 6px!important}
 .r-chaine p{font-size:14px;line-height:1.45;margin-bottom:10px}
-.r-compteurs{display:grid!important;grid-template-columns:repeat(4,auto);gap:4px 10px!important}.r-compteurs span{border:0!important;padding:0!important;font-size:12px}
+.r-compteurs{display:grid!important;grid-template-columns:repeat(4,minmax(0,auto));gap:4px 8px!important}.r-compteurs b{white-space:nowrap}.r-compteurs span{border:0!important;padding:0!important;font-size:12px}
 .r-compteurs b{font-size:18px!important}.r-chaine .r-actions{display:flex;flex-wrap:wrap;gap:8px}.r-chaine .r-actions .btn{height:40px;padding:0 12px;font-size:14px}
 .r-une{display:grid!important;grid-template-columns:132px minmax(0,1fr)!important;align-items:start}.r-une-vig{margin:12px 0 12px 12px!important;border-radius:10px!important}
-.r-une-vig .r-style,.r-une .r-pistes,.r-une-vig .play{display:none!important}.r-une-vig{align-self:start!important}
+.r-une-vig .r-style,.r-une .r-pistes,.r-une-vig .play{display:none!important}.r-une-g{justify-content:flex-start!important}.r-une-g .r-une-vig{align-self:stretch!important}
 .r-une-infos{padding:12px!important;gap:6px!important}.r-une h2{font-size:15px!important;line-height:1.3}.r-une .r-sur{font-size:11px}
 .r-une .r-actions{grid-column:1/-1;display:flex;gap:8px;flex-wrap:wrap}.r-une .r-actions .btn{height:38px;padding:0 12px;font-size:14px}
 .r-cote{gap:12px!important}.r-encart{padding:14px!important}.r-compte div{padding:6px 2px!important}.r-compte b{font-size:22px!important}
@@ -906,7 +908,8 @@ display:flex;flex-direction:column;justify-content:space-between}
 .r-grille .r-carte .b b{font-size:14px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
 .r-top li:nth-child(n+6),.r-morceaux li:nth-child(n+6){display:none}.r-pied .col{gap:0!important}.r-top a{padding:4px!important;gap:10px!important}
 .r-pl li:nth-child(n+6){display:none}.r-ambiance{padding:14px!important}.r-ambiance p{display:none}.r-ambiance .e{font-size:22px!important}
-.r-explorer{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:10px!important}
+.r-explorer{grid-template-columns:minmax(0,1fr)!important;gap:10px!important}   /* 27/10 : « explorer autrement, rien ne va » : à deux colonnes, horloge, télé et disque se chevauchaient */
+.r-et-aussi .r-explorer{grid-template-columns:repeat(2,minmax(0,1fr))!important}
 .r-pied-cols{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:20px 16px!important;padding:28px 0 18px!important}.r-pied .col.marque{grid-column:1/-1}
 .r-pied .col a{min-height:28px!important;font-size:14px!important}
 body.menu-ouvert header.top nav.menu{max-height:calc(100vh - 140px);overflow-y:auto}
@@ -915,6 +918,34 @@ body.menu-ouvert .mega-panneau .col{display:flex!important;flex-direction:row!im
 body.menu-ouvert .mega-panneau .col h3{flex-basis:100%;margin:4px 0 0!important}
 body.menu-ouvert .mega-panneau .col a{padding:6px 11px!important;border:1px solid var(--trait);border-radius:999px;font-size:14px!important;white-space:nowrap}
 body.menu-ouvert .mega-panneau .col a.vitrine{display:none!important}
+/* 27/10/2026, CyberBob : « les vignettes sur téléphone sont trop grandes, trop de temps pour arriver en bas » : partout, une carte de mix
+   devient une ligne (petite vignette à gauche, titre à droite) ; les artistes passent sur deux colonnes. */
+.grid{grid-template-columns:1fr!important;gap:8px!important}
+.grid .card{display:grid!important;grid-template-columns:112px minmax(0,1fr);align-items:center}
+.grid .card img{width:112px!important;height:63px!important;aspect-ratio:auto!important;object-fit:cover;border-radius:8px 0 0 8px}
+.grid .card .b{padding:6px 10px!important}.grid .card .b b{font-size:14px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.art-mix{display:grid!important;grid-template-columns:104px minmax(0,1fr);gap:10px;align-items:start}
+.art-mix .art-vign{width:104px!important;margin:0!important}.art-mix .art-vign img{width:104px!important;height:58px!important;object-fit:cover}
+.art-mix .art-vign .play{display:none!important}.art-mix h2{font-size:15px!important;margin-top:0!important}
+#liste .r-carte{grid-template-columns:104px minmax(0,1fr)!important}#liste .r-carte .vign{width:104px!important}
+.r-az{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important}.r-az a{min-width:0}.r-az .nm{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.r-credits{columns:2;column-gap:14px;font-size:12px}.r-credits li{break-inside:avoid;margin-bottom:4px}
+/* 27/10/2026, revue dans le simulateur d'iPhone : moins de vide, des éléments à la taille d'un écran de téléphone */
+.r-bloc{margin-top:28px!important}.r-tete h2,.r-lettre h2{font-size:19px!important;line-height:1.2}
+.r-grille{grid-auto-columns:46%!important}.r-grille .r-carte .b{padding:8px!important}.r-grille .r-carte .b b{font-size:13px}.r-grille .r-carte .b span{font-size:12px}
+.r-grille .r-carte .r-style,.r-grille .r-carte .play{display:none!important}
+.r-grille .r-carte .vign{aspect-ratio:16/9!important;height:auto!important;min-height:0!important}.r-grille .r-carte .vign img{height:100%!important}
+.premiere-bloc .une-carte .une-txt b{font-size:16px!important;line-height:1.25}.premiere-bloc .une-txt>span:not(.btn){font-size:13px!important;line-height:1.35}.premiere-bloc h2{font-size:17px!important}.premiere-bloc .une-txt .kind{display:none!important}.premiere-bloc .une-carte{align-items:start!important}
+.r-compte{gap:6px!important}.r-compte div{padding:4px 2px!important}.r-compte b{font-size:20px!important}.r-compte span{font-size:11px}
+.r-encart .btn{min-height:40px;padding:8px 12px!important;font-size:14px}
+.premiere-bloc .btn{white-space:nowrap;font-size:13px!important;padding:8px 12px!important;line-height:1.2}
+.r-top b{font-size:14px!important;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
+.r-morceaux a{padding:7px 10px!important}.r-morceaux b{font-size:14px!important}
+.r-rail{gap:12px!important}.r-rond{width:76px!important;height:76px!important;font-size:22px!important}
+.r-tuile{min-height:0!important;padding:14px!important}
+.r-tableau{grid-template-columns:repeat(3,minmax(0,1fr))!important}.r-tableau b,.r-tableau strong{font-size:26px!important}.r-tableau span,.r-tableau i{font-size:11px!important}
+.r-lettre input[type=email]{height:44px!important;flex:none}.r-lettre form{flex-direction:column;align-items:stretch}
+.r-dernier-vig img,.vendredi .card img{max-height:150px;object-fit:cover}
 .r-filtres:not(.ouvert) .r-fg{display:none!important}.r-filtres{padding:12px!important}
 .r-filtres-btn{display:block;width:100%;margin-top:10px;padding:9px;border-radius:10px;border:1px solid var(--trait);background:rgba(11,7,22,.6);color:var(--encre);font-size:15px;cursor:pointer}
 #liste{grid-template-columns:1fr!important;gap:8px!important}
