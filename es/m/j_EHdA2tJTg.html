@@ -283,7 +283,8 @@ border-radius:18px;padding:16px;margin:0 0 22px}
 .art-vign img{display:block;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .art-vign:hover img{transform:scale(1.06)}.art-vign .play{opacity:.9}
 .art-txt h2{margin-top:2px!important;font-size:19px!important}.art-txt ol.tl{margin:0}
-@media (max-width:640px){.art-mix{grid-template-columns:1fr;padding:12px}}
+@media (max-width:640px){.art-mix{grid-template-columns:minmax(0,1fr);padding:12px}}   /* 27/10 : 1fr laissait la miniature (320 px) élargir la colonne : titre coupé à droite */
+.art-txt h2{overflow-wrap:break-word}
 footer.site{position:relative;z-index:1;background:linear-gradient(180deg,rgba(9,11,26,.97),rgba(5,6,15,.99))!important;border-top:2px solid var(--bleu)!important;
 box-shadow:0 -10px 30px rgba(0,0,0,.5);margin-left:auto!important;margin-right:auto!important;border-radius:18px 18px 0 0}
 /* 26/10/2026, relecture de toutes les pages : (1) un titre de rubrique qui est un lien (page d'artiste : le nom du mix) ne se
