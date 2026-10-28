@@ -222,6 +222,10 @@ body{background:#0b0716}
 .vign .rang{position:absolute;top:8px;left:8px;background:var(--degrade);color:#fff;font-weight:900;border-radius:8px;padding:2px 8px;font-size:13px;z-index:1}
 .vign{position:relative}
 
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.sugg .vide{margin:8px 12px;font-size:13px;opacity:.85}
+.etapes{padding-left:22px;margin:4px 0 14px}.etapes li{margin:4px 0}
+.fav-transfert{margin-top:28px}
 .card .b small.det{display:block;font-size:12px;font-weight:400;opacity:.78;margin:2px 0 1px;line-height:1.35}
 /* 27/10/2026 : « Plus » range cinq liens du menu ; s'ouvre d'un toucher (details), au-dessus du contenu */
 nav.menu details.plus{position:relative}
