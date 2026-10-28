@@ -222,6 +222,7 @@ body{background:#0b0716}
 .vign .rang{position:absolute;top:8px;left:8px;background:var(--degrade);color:#fff;font-weight:900;border-radius:8px;padding:2px 8px;font-size:13px;z-index:1}
 .vign{position:relative}
 
+.card .b small.det{display:block;font-size:12px;font-weight:400;opacity:.78;margin:2px 0 1px;line-height:1.35}
 /* 27/10/2026 : « Plus » range cinq liens du menu ; s'ouvre d'un toucher (details), au-dessus du contenu */
 nav.menu details.plus{position:relative}
 nav.menu details.plus summary{list-style:none;cursor:pointer;color:#e8e2ff;font-size:14px;font-weight:600;padding:6px 10px;border-radius:8px}
