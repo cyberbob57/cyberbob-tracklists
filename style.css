@@ -963,6 +963,22 @@ body.menu-ouvert .mega-panneau .col a.vitrine{display:none!important}
 #liste .r-coeur{transform:scale(.8);top:2px!important;right:2px!important}
 }
 
+/* 🎭 le rideau de la Première */
+.premiere-bloc .une-carte{position:relative;overflow:hidden;isolation:isolate}
+.rideau-pan{position:absolute;top:0;bottom:0;width:52%;z-index:4;pointer-events:none;
+ background:linear-gradient(180deg,rgba(0,0,0,.25),transparent 18%,transparent 80%,rgba(0,0,0,.45)),
+ repeating-linear-gradient(90deg,#4a0010 0,#7d0a1d 2.2%,#b5172f 4.4%,#d8304a 5.4%,#a3122a 7%,#6a0818 9.4%,#4a0010 11%);
+ box-shadow:inset 0 0 22px rgba(0,0,0,.55);transition:transform 2.4s cubic-bezier(.65,.05,.3,1)}
+/* ouverts, les pans restent drapés sur les côtés (plis serrés : la même étoffe, comprimée) */
+.rideau-pan.g{left:0;transform-origin:0 50%;transform:scaleX(.09)}
+.rideau-pan.d{right:0;transform-origin:100% 50%;transform:scaleX(.09)}
+.rideau-ferme .rideau-pan.g,.rideau-ferme .rideau-pan.d{transform:none}
+.rideau-haut{position:absolute;left:0;right:0;top:0;height:16px;z-index:5;pointer-events:none;
+ background:radial-gradient(14px 10px at 50% 0,#b5172f 70%,transparent 72%) 0 0/22px 14px repeat-x,linear-gradient(#7d0a1d,#7d0a1d) 0 0/100% 6px no-repeat;
+ border-top:2px solid #d4a63a;filter:drop-shadow(0 3px 3px rgba(0,0,0,.5))}
+.rideau-haut::after{content:"";position:absolute;left:0;right:0;top:10px;height:5px;background:repeating-linear-gradient(90deg,#e8c35a 0 2px,transparent 2px 5px);opacity:.85}
+@media (prefers-reduced-motion:reduce){.rideau-pan{transition:none}}
+
 /* 🔴 ON AIR en images (29/10/2026) */
 .onair.oa2,header.top .onair.oa2{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;animation:none!important;
  overflow:visible!important;height:44px!important;margin:-2px 0;display:inline-block!important;position:relative!important;line-height:0;text-shadow:none!important}
