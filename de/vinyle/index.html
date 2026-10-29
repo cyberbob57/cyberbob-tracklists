@@ -153,7 +153,10 @@ const enG=e=>{const b=PL.getBoundingClientRect();return [(e.clientX-b.left)*G.sw
    disque) ; le diamant se pose alors sur le sillon de ce temps. Doigt nettement hors du disque : le bras rentre au repos. */
 const viser=e=>{const [x,y]=enG(e),dx=x-G.cx,dy=(y-G.cy)/G.ap,rp=Math.hypot(dx,dy);if(rp>G.rd+95)return null;
  let f=(Math.atan2(dy,dx)-TH0)/(2*Math.PI);f-=Math.floor(f);const n=M.p.length;return M.p[Math.round(f*n)%n][0];};   /* le titre dont le REPÈRE est le plus proche du doigt (viser un repère ne tombe plus sur une frontière) */
-const suivre=e=>{const t=viser(e);if(t==null){poser(0);allumer(-1);return;}poser(angle(rayonDe(t)));allumer(pisteA(t));};
+/* 29/10 (CyberBob : « avec le bras on n'arrive plus à l'accompagner avec la souris ») : pendant le geste, le bras SUIT la main (la
+   pointe va au plus près du curseur) ; le titre qui s'allume, et qui démarrera au lâcher, reste celui du repère le plus proche. */
+const sousMain=e=>{const [x,y]=enG(e);let best=0,bd=1e12;for(let a=0;a<=AMAX;a+=.2){const [px,py]=pointe(a),d=(px-x)*(px-x)+(py-y)*(py-y);if(d<bd){bd=d;best=a;}}return best;};
+const suivre=e=>{poser(sousMain(e));const t=viser(e);allumer(t==null?-1:pisteA(t));};
 let depart=null,glisse=false;
 function lacher(e){if(!tire)return;tire=false;Z.classList.remove('tire');const t=viser(e);
  if(t==null){if(P&&ok){try{P.pauseVideo();}catch(_){}}etat(false);poser(0);allumer(-1);return;}   /* bras ramené vers son repos : la musique s'arrête (CyberBob, 29/10) */
