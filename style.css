@@ -609,7 +609,7 @@ header.top .droite .deco-haut{order:0!important}header.top .droite .langs{order:
 .r-chaine .btn.r-yt{background:#d4002b!important;color:#fff!important;border:0!important;box-shadow:0 0 20px rgba(255,0,51,.45)!important}.r-chaine .btn.r-yt:hover{background:#e8002f!important}
 .r-chaine .btn.r-yt svg{width:22px;height:22px}
 .r-chaine .btn.r-contour{background:transparent!important;color:var(--encre)!important;border:1px solid #36447a!important;box-shadow:none!important}.r-chaine .btn.r-contour:hover{border-color:var(--violet)!important}
-.r-chaine .cassette{position:relative;overflow:visible!important;width:300px;max-width:100%;height:auto!important;transform:none;border-radius:12px;padding:10px;box-sizing:border-box;
+.r-chaine .cassette{position:relative;overflow:visible!important;width:240px;max-width:100%;height:auto!important;transform:none;border-radius:12px;padding:10px;box-sizing:border-box;
 background:linear-gradient(160deg,#2a2140,#120d22);border:0!important;box-shadow:0 0 0 1px rgba(255,255,255,.08),0 0 30px rgba(46,168,255,.3),0 16px 30px rgba(0,0,0,.6)!important;transition:transform .3s}
 .r-chaine:hover .cassette{transform:scale(1.03)}.r-chaine .cassette video{display:block;width:100%;height:auto;border-radius:6px}
 /* largeur de la maquette (1 200 px) ; ON AIR garde son dessin mais à la taille de la maquette, et tout tient avant le bord droit (27/10) */
