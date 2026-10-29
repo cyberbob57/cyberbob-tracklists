@@ -960,3 +960,18 @@ body.menu-ouvert .mega-panneau .col a.vitrine{display:none!important}
 #liste .r-carte .b{padding:8px 34px 8px 10px!important}#liste .r-carte .b b{font-size:14px;-webkit-line-clamp:2;display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}
 #liste .r-coeur{transform:scale(.8);top:2px!important;right:2px!important}
 }
+
+/* 🔴 ON AIR en images (29/10/2026) */
+.onair.oa2,header.top .onair.oa2{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;animation:none!important;
+ overflow:visible!important;height:44px!important;margin:-2px 0;display:inline-block!important;position:relative!important;line-height:0;text-shadow:none!important}
+.onair.oa2::before,.onair.oa2::after{display:none!important}
+.onair.oa2 img{display:block;height:44px;width:auto;max-width:none}
+.onair.oa2 .oa2-on{position:absolute;left:0;top:0;opacity:0;
+ animation:oa2-allume 1.5s linear .5s 1 forwards,oa2-respire 4.2s ease-in-out 2s infinite}
+.onair.oa2:hover .oa2-on,.onair.oa2:focus-visible .oa2-on{filter:brightness(1.18) saturate(1.1)}
+.onair.oa2 .oa2-txt{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes oa2-allume{0%{opacity:0}6%{opacity:.9}9%{opacity:.05}15%{opacity:.7}18%{opacity:.1}27%{opacity:1}31%{opacity:.35}38%,100%{opacity:1}}
+@keyframes oa2-respire{0%,100%{opacity:1;filter:brightness(1)}45%{opacity:.86;filter:brightness(.92)}60%{opacity:1;filter:brightness(1.06)}
+ 81%{opacity:1}82%{opacity:.4}83%{opacity:1}}
+@media (max-width:820px){.onair.oa2,header.top .onair.oa2{height:34px!important;margin:0}.onair.oa2 img{height:34px}}
+@media (prefers-reduced-motion:reduce){.onair.oa2 .oa2-on{animation:none;opacity:1}}
