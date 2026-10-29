@@ -135,7 +135,7 @@ function dessiner(){Z.style.setProperty('--h',M.h);$('#vs-arc').setAttribute('tr
 /* 29/10 (CyberBob : « à la fin du mix, le bras devrait remonter et retourner à sa position d'origine ») : il se soulève
    (ombre plus grande), revient lentement à son repos, l'arc se vide. */
 function retour(){Z.classList.add('retour');poser(0);tps=0;$('#vs-arc').setAttribute('stroke-dasharray','0 1000');$('.vs-prog span').style.width='0%';$('#vs-t').textContent='0:00';allumer(-1);setTimeout(()=>Z.classList.remove('retour'),2200);}
-function etat(j){joue=j;Z.classList.toggle('joue',j);$('.vs-jouer').textContent=j?'❚❚':'▶';$('.vs-jouer').setAttribute('aria-label',j?'Pause':'Lecture');if(!j&&!tire&&tps<1)poser(0);}
+function etat(j){joue=j;Z.classList.toggle('joue',j);$('.vs-jouer').textContent=j?'❚❚':'▶';$('.vs-jouer').setAttribute('aria-label',j?'Pause':'Lecture');}   /* 29/10 : plus de retour au repos sur un état « chargement » à 0:00 (le bras faisait un aller-retour sur le titre 1) */
 function lecteur(t){const ec=$('.vs-ecran');$('.vs-pochette').classList.add('video');
  ec.innerHTML='<iframe id="vin-yt" src="https://www.youtube-nocookie.com/embed/'+M.id+'?autoplay=1&rel=0&playsinline=1&enablejsapi=1&start='+Math.floor(t)+'&origin='+encodeURIComponent(location.origin)+'" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen title="'+M.t.replace(/"/g,'')+'"></iframe>';
  window.onYouTubeIframeAPIReady=()=>{P=new YT.Player('vin-yt',{events:{onReady:()=>{ok=true;const v=$('#vs-vol');if(v)P.setVolume(+v.value);},onStateChange:e=>{etat(e.data===1);if(e.data===0)retour();}}});};
