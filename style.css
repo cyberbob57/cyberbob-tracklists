@@ -668,7 +668,7 @@ header.top .ic-fav .nb{top:-6px;right:-6px;background:#ff1f4b}header.top .ic-fav
 .r-actifs button:not(.r-lien){display:inline-flex;gap:8px;align-items:center;padding:6px 12px;border-radius:999px;background:#1d1450;border:1px solid var(--violet);color:#e8e2ff;font-size:13px;cursor:pointer}
 .r-actifs button:not(.r-lien):hover{border-color:var(--rouge)}button.r-lien{background:none;border:0;cursor:pointer;padding:0}
 #mix #liste{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
-.r-vide{text-align:center;color:var(--doux);padding:40px 16px;border:1px dashed var(--trait);border-radius:14px;margin-top:10px}.r-vide[hidden]{display:none}
+.r-suite{text-align:center;margin:22px 0 4px}.r-vide{text-align:center;color:var(--doux);padding:40px 16px;border:1px dashed var(--trait);border-radius:14px;margin-top:10px}.r-vide[hidden]{display:none}
 .r-vide b{display:block;color:var(--encre);margin-bottom:6px;font-size:17px}
 @media (max-width:1100px){#mix #liste{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:820px){.r-catalogue{grid-template-columns:1fr}.r-filtres{position:static;max-height:none}}
@@ -690,6 +690,8 @@ justify-content:center;font-size:16px;line-height:1;color:#fff;z-index:3;cursor:
 .r-une-vig .duree,.r-carte .duree{position:absolute;right:10px;bottom:10px;z-index:2;font-size:12px!important;line-height:1.4;padding:1px 7px;border-radius:5px;
 background:rgba(0,0,0,.65)!important;color:#fff!important;font-variant-numeric:tabular-nums;font-weight:500}
 /* 🎵 la page d'un mix (partie 6, maquette) : deux colonnes, le lecteur au-dessus du titre, la colonne de droite en encarts */
+.vers-tracklist{display:none;margin:8px 0 0;font-weight:700;color:#b9c1da;text-decoration:none}@media (max-width:1000px){.vers-tracklist{display:inline-block}}
+#tracklist{scroll-margin-top:80px}
 .r-deux{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:28px;align-items:start}.r-gauche{display:grid;gap:22px;min-width:0}
 .r-deux .album{display:block!important}.r-deux .album-media,.r-deux .album-info{width:auto!important;max-width:none!important}
 .r-deux .album-info{margin-top:14px}.r-deux .album-info h1{font-size:26px!important;line-height:1.25}
