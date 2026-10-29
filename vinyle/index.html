@@ -98,6 +98,9 @@ const pointe=a=>{const t=a*Math.PI/180;return [G.bx+VX*Math.cos(t)-VY*Math.sin(t
 const dist=a=>{const [x,y]=pointe(a);return Math.hypot(x-G.cx,(y-G.cy)/G.ap)};
 let AMAX=0;for(let a=0,b=1e9;a<120;a+=.1){const d=dist(a);if(d<b){b=d;AMAX=a;}}
 function angle(r){let lo=0,hi=AMAX;for(let k=0;k<32;k++){const mi=(lo+hi)/2;if(dist(mi)>r)lo=mi;else hi=mi;}return (lo+hi)/2;}
+/* 29/10 (CyberBob : « le 0:00 à gauche n'a aucun sens ») : le 0:00 est là où le diamant se pose sur le premier sillon, puis les minutes
+   tournent dans le sens du disque ; l'arc cyan part du même point. */
+const TH0=(()=>{const [x,y]=pointe(angle(G.r0));return Math.atan2((y-G.cy)/G.ap,x-G.cx);})();
 const rayonDe=t=>G.r0-(G.r0-G.r1)*Math.min(1,Math.max(0,t/M.d));
 const tempsDe=r=>(G.r0-r)/(G.r0-G.r1)*M.d;
 const poser=a=>{BR.style.transform='rotate('+a.toFixed(2)+'deg)';};
@@ -110,11 +113,11 @@ function allumer(i){if(i===cur)return;cur=i;
  if(i>=0){const li=L.children[i];if(li&&!tire)li.scrollIntoView({block:'nearest'});}}
 function progression(t){tps=t;const f=Math.min(1,Math.max(0,t/M.d));$('#vs-arc').setAttribute('stroke-dasharray',(f*1000).toFixed(1)+' 1000');
  $('.vs-prog span').style.width=(f*100)+'%';$('#vs-t').textContent=hms(t);allumer(pisteA(t));if(!tire&&joue)poser(angle(rayonDe(t)));}
-function dessiner(){Z.style.setProperty('--h',M.h);L.textContent='';const rep=$('#vs-reperes');rep.textContent='';PL.querySelectorAll('.vs-minute').forEach(e=>e.remove());
+function dessiner(){Z.style.setProperty('--h',M.h);$('#vs-arc').setAttribute('transform','rotate('+(TH0*180/Math.PI).toFixed(1)+' '+G.cx+' '+G.cy+')');L.textContent='';const rep=$('#vs-reperes');rep.textContent='';PL.querySelectorAll('.vs-minute').forEach(e=>e.remove());
  let dernier=-99;
  M.p.forEach((p,i)=>{const li=document.createElement('li');const n=document.createElement('i');n.textContent=String(i+1).padStart(2,'0');const b=document.createElement('b');b.textContent=p[1];
   const e=document.createElement('em');e.textContent=hms(p[0]);li.append(n,b,e);li.addEventListener('click',()=>aller(i));L.appendChild(li);
-  const th=Math.PI+2*Math.PI*p[0]/M.d,rr=G.rd+14,x=G.cx+rr*Math.cos(th),y=G.cy+rr*G.ap*Math.sin(th);
+  const th=TH0+2*Math.PI*p[0]/M.d,rr=G.rd+14,x=G.cx+rr*Math.cos(th),y=G.cy+rr*G.ap*Math.sin(th);
   const c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',7);c.setAttribute('class','vs-repere');c.dataset.i=i;rep.appendChild(c);
   const deg=p[0]/M.d*360;if(deg-dernier<17&&i)return;dernier=deg;
   const R2=G.rd+58,m=document.createElement('button');m.type='button';m.className='vs-minute';m.dataset.i=i;m.textContent=hms(p[0]);m.title=p[1];
@@ -138,7 +141,8 @@ const vers=e=>{const b=PL.getBoundingClientRect(),x=(e.clientX-b.left)*G.sw/b.wi
 BR.addEventListener('pointerdown',e=>{tire=true;Z.classList.add('tire');BR.setPointerCapture(e.pointerId);e.preventDefault();});
 BR.addEventListener('pointermove',e=>{if(!tire)return;const a=vers(e),r=dist(a);poser(a);allumer(r<=G.r0+12&&r>=G.r1-12?pisteA(tempsDe(Math.min(G.r0,Math.max(G.r1,r)))):-1);});
 BR.addEventListener('pointerup',e=>{if(!tire)return;tire=false;Z.classList.remove('tire');const r=dist(vers(e));
- if(r<=G.r0+12&&r>=G.r1-12){const i=pisteA(tempsDe(Math.min(G.r0,Math.max(G.r1,r))));aller(Math.max(0,i));}else{poser(joue?angle(rayonDe(tps)):0);allumer(pisteA(tps));}});
+ if(r<=G.r0+12&&r>=G.r1-12){const i=pisteA(tempsDe(Math.min(G.r0,Math.max(G.r1,r))));aller(Math.max(0,i));}else if(r>G.r0+12){if(P&&ok){try{P.pauseVideo();}catch(_){}}etat(false);poser(0);}   /* bras ramené vers son repos : la musique s'arrête (CyberBob, 29/10) */
+ else{poser(joue?angle(rayonDe(tps)):0);allumer(pisteA(tps));}});
 /* un toucher sur le disque : saute au titre qui passe à ce rayon */
 $('.vs-disque').addEventListener('click',e=>{const b=PL.getBoundingClientRect(),x=(e.clientX-b.left)*G.sw/b.width,y=(e.clientY-b.top)*G.sh/b.height,r=Math.hypot(x-G.cx,(y-G.cy)/G.ap);
  if(r>=G.r1-12&&r<=G.r0+12)aller(Math.max(0,pisteA(tempsDe(Math.min(G.r0,Math.max(G.r1,r))))));});
