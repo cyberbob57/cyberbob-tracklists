@@ -206,6 +206,16 @@ body{background:#0b0716}
 }
 @keyframes sw-roule{to{background-position:0 80px}}
 @media (prefers-reduced-motion:reduce){.sw .sol{animation:none}}
+/* 🚗 la DeLorean de l'accueil (30/10/2026) : sur l'horizon, derrière le contenu, en boucle ; rien sous 1 200 px (le .sw est caché) */
+.sw .delorean{position:absolute;left:0;bottom:34%;width:min(11vw,200px);transform:translate(-130%,14.5%);will-change:transform;filter:drop-shadow(0 0 10px rgba(255,45,247,.55));animation:sw-delorean 7.5s linear infinite}
+.sw .delorean img{width:100%;height:auto;display:block}
+.sw .delorean .roue{position:absolute;top:57%;width:13.5%;aspect-ratio:1;border-radius:50%;opacity:.75;mix-blend-mode:screen;background:repeating-conic-gradient(rgba(255,255,255,.7) 0 10deg,transparent 10deg 30deg);-webkit-mask:radial-gradient(circle,transparent 22%,#000 26%,#000 78%,transparent 82%);mask:radial-gradient(circle,transparent 22%,#000 26%,#000 78%,transparent 82%);animation:sw-roue .22s linear infinite}
+.sw .delorean .roue.av{left:14.8%}.sw .delorean .roue.ar{left:72.6%}
+.sw .fum{position:absolute;bottom:32.5%;margin-left:-80px;border-radius:50%;opacity:0;pointer-events:none;filter:blur(7px);background:radial-gradient(circle at 45% 55%,rgba(235,225,245,.85),rgba(210,200,230,.45) 45%,transparent 70%);animation:sw-fumee 7.5s ease-out infinite}
+@keyframes sw-delorean{0%{transform:translate(-130%,14.5%)}93.33%{transform:translate(calc(100vw + 60%),14.5%)}93.43%,100%{transform:translate(-130%,14.5%)}}
+@keyframes sw-roue{to{transform:rotate(360deg)}}
+@keyframes sw-fumee{0%{opacity:0;transform:translate(0,0) scale(.3)}6%{opacity:.85}30%{opacity:.5;transform:translate(-30px,-40px) scale(1.4)}70%{opacity:0;transform:translate(-90px,-120px) scale(2.4)}100%{opacity:0;transform:translate(-90px,-120px) scale(2.4)}}
+@media (prefers-reduced-motion:reduce){.sw .delorean,.sw .fum{display:none}}
 /* 🌍 la carte, 🔥 l'écoute de la semaine, 🕐 le moment */
 .monde{width:100%;height:auto;display:block;background:radial-gradient(ellipse at 50% 40%,#16204a,#0b0f1d 70%);border:1px solid var(--line);border-radius:16px}
 .monde .terre{fill:#1c2547;stroke:#2c3a6b;stroke-width:.6}
