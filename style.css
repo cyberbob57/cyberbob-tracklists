@@ -470,7 +470,7 @@ nav.menu details.mega[open]>summary,nav.menu details.mega>summary:hover{backgrou
 .mega-panneau{position:absolute;left:0;right:0;top:100%;z-index:65;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;padding:22px 24px;
 background:rgba(21,16,42,.98);border:1px solid var(--trait);border-top:0;border-radius:0 0 18px 18px;box-shadow:0 24px 50px rgba(0,0,0,.6)}
 .mega-panneau .col{display:flex;flex-direction:column;gap:2px;min-width:0}
-.mega-panneau h3{margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.mega-panneau .col>b{display:block;margin:0 0 8px;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
 .mega-panneau a{color:#d8dcf0;text-decoration:none;font-size:14px;padding:5px 6px;border-radius:7px}
 .mega-panneau a:hover{color:#fff;background:rgba(138,92,255,.18)}.mega-panneau a.fort{color:#fff;font-weight:700}.mega-panneau a.voir{color:var(--bleu);margin-top:4px}
 .mega-panneau a.plus-haut{margin-top:8px}
@@ -589,8 +589,8 @@ display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:30px;align-items:
 .r-cit figure[hidden]{display:none}.r-cit blockquote{margin:0;font-size:22px;line-height:1.45;color:var(--encre);text-shadow:0 1px 2px #000,0 0 14px rgba(11,7,22,.95)}
 .r-cit blockquote:before{content:"“";display:block;font-family:Georgia,serif;font-size:72px;line-height:.6;color:var(--violet);margin-bottom:8px}
 .r-cit figcaption{color:var(--doux);font-size:14px}.r-cit figcaption b{color:var(--encre);font-weight:500}
-.r-cit-nav{display:flex;align-items:center;gap:10px}.r-points{display:flex;gap:6px}.r-points button{width:8px;height:8px;border-radius:50%;background:var(--trait);border:0;padding:0;cursor:pointer}
-.r-points button[aria-current="true"]{background:var(--violet);width:22px;border-radius:4px}
+.r-cit-nav{display:flex;align-items:center;gap:10px}.r-points{display:flex;gap:0}.r-points button{width:24px;height:24px;background:none;border:0;padding:0;cursor:pointer;display:grid;place-items:center}.r-points button:before{content:"";width:8px;height:8px;border-radius:4px;background:var(--trait)}
+.r-points button[aria-current="true"]{width:30px}.r-points button[aria-current="true"]:before{background:var(--violet);width:22px}
 .r-lettre{border-radius:20px;border:1px solid var(--violet);background:linear-gradient(120deg,#1d1450,#15102a 60%);padding:28px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
 .r-lettre p{margin:6px 0 0;color:var(--doux);font-size:15px}.r-lettre form{display:grid;gap:8px}.r-ligne{display:flex;gap:8px}.r-lettre small{font-size:13px;color:var(--doux)}
 .r-grille-styles{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
@@ -958,7 +958,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body.menu-ouvert header.top nav.menu{max-height:calc(100vh - 140px);overflow-y:auto}
 body.menu-ouvert header.top details.mega .mega-panneau{grid-template-columns:1fr!important;gap:12px!important;padding:10px 0!important}
 body.menu-ouvert .mega-panneau .col{display:flex!important;flex-direction:row!important;flex-wrap:wrap;gap:6px}
-body.menu-ouvert .mega-panneau .col h3{flex-basis:100%;margin:4px 0 0!important}
+body.menu-ouvert .mega-panneau .col>b{flex-basis:100%;margin:4px 0 0!important}
 body.menu-ouvert .mega-panneau .col a{padding:6px 11px!important;border:1px solid var(--trait);border-radius:999px;font-size:14px!important;white-space:nowrap}
 body.menu-ouvert .mega-panneau .col a.vitrine{display:none!important}
 /* 27/10/2026, CyberBob : « les vignettes sur téléphone sont trop grandes, trop de temps pour arriver en bas » : partout, une carte de mix
