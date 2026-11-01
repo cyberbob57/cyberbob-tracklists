@@ -1060,6 +1060,8 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(255,210,63,.3),transpa
 .hab.hab-anniversaire i.ballon:nth-of-type(1){left:5%;animation-duration:15s}.hab.hab-anniversaire i.ballon:nth-of-type(2){left:22%;animation-duration:19s;animation-delay:-7s;width:50px;height:68px}
 .hab.hab-anniversaire i.ballon:nth-of-type(3){left:40%;animation-duration:17s;animation-delay:-12s}.hab.hab-anniversaire i.ballon:nth-of-type(4){left:58%;animation-duration:21s;animation-delay:-3s;width:56px;height:76px}
 .hab.hab-anniversaire i.ballon:nth-of-type(5){left:76%;animation-duration:16s;animation-delay:-9s}.hab.hab-anniversaire i.ballon:nth-of-type(6){left:91%;animation-duration:23s;animation-delay:-15s;width:46px;height:62px}
+@keyframes hab-annonce-part{to{opacity:0;transform:scale(.6)}}
+@media (prefers-reduced-motion:reduce) and (max-width:640px){.hab.hab-anniversaire i.annonce{display:none}}
 @keyframes hab-monte{0%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(24px,-55vh) rotate(5deg)}100%{transform:translate(-16px,-115vh) rotate(-4deg)}}
 .hab.hab-anniversaire i.confetti{width:18px;height:18px;top:-30px;opacity:.95;background-image:var(--hab-confetti);animation:hab-neige 9s linear infinite}
 .hab.hab-anniversaire i.confetti:nth-of-type(n){left:calc(var(--k)*7%)}
@@ -1067,7 +1069,8 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(255,210,63,.3),transpa
 .hab.hab-anniversaire i.boule{right:3%;top:92px;width:150px;height:150px;opacity:.85;z-index:1;background-image:var(--hab-boule);filter:drop-shadow(0 0 36px rgba(255,255,255,.7));animation:hab-lueur 2.4s ease-in-out infinite}
 .hab-abonne.anniversaire{background-image:var(--hab-gateau);width:72px;height:72px}
 header.top{border-color:#ffd23f!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(255,210,63,.35)!important}
-@media (max-width:640px){.hab.hab-anniversaire i.annonce{width:170px;height:85px;top:76px;left:auto;right:2%}.hab.hab-anniversaire i.boule{display:none}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
+/* téléphone (CyberBob, 01/11 : « quand on scrolle, le 2 ans gêne la lecture ») : l'annonce reste 7 secondes puis s'efface ; sans animations, pas d'annonce */
+@media (max-width:640px){.hab.hab-anniversaire i.annonce{width:170px;height:85px;top:76px;left:auto;right:2%;animation:hab-annonce-part 1.2s ease-in 7s forwards}.hab.hab-anniversaire i.boule{display:none}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
 
 @media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{animation:none;width:44px;height:44px;margin:-4px 0 -4px 8px;transform:none}
  .hab-abonne.ete{width:56px;height:28px}}
