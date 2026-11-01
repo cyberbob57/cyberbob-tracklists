@@ -1041,7 +1041,10 @@ header.top{position:relative}
 header.top .hab-coin{position:absolute;top:0;width:130px;height:130px;pointer-events:none;background:var(--hab-toile) 0 0/100% 100% no-repeat;opacity:.85}
 header.top .hab-coin.g{left:0}header.top .hab-coin.d{right:0;transform:scaleX(-1)}
 .btn.r-yt{position:relative;overflow:visible}
-.hab-abonne{position:absolute;left:50%;bottom:calc(100% - 2px);width:86px;height:86px;margin-left:-43px;background:center/contain no-repeat;pointer-events:none;z-index:2;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));animation:hab-lueur 2.6s ease-in-out infinite}
+/* 01/11, 16 h 20, CyberBob : « le gâteau est en plein sur S'abonner et cache des chiffres », puis « mets le centre sur la ligne de tous les
+   chiffres » : l'objet est le dernier élément de la rangée des chiffres (mix, titres, artistes, vues), centré sur sa hauteur, à sa droite */
+.r-compteurs{align-items:center}
+.hab-abonne{display:block;width:64px;height:64px;margin:-6px 0 -6px 14px;padding:0!important;border:0!important;background:center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));animation:hab-lueur 2.6s ease-in-out infinite}
 header.top .hab-img{position:absolute;inset:0;z-index:-1;background:var(--hab-bandeau) center/cover no-repeat;opacity:.38;border-radius:inherit;pointer-events:none}
 header.top:has(.hab-img){margin-top:-18px!important;padding-top:40px!important;border-top:0!important;border-top-left-radius:0!important;border-top-right-radius:0!important}
 /* le cadre de l'en-tête monte lui-même jusqu'au bord de la page (CyberBob : « on voit par transparence le bord haut du cadre d'origine ») */
@@ -1062,10 +1065,10 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(255,210,63,.3),transpa
 .hab.hab-anniversaire i.confetti:nth-of-type(n){left:calc(var(--k)*7%)}
 .hab.hab-anniversaire i.annonce{left:2%;top:100px;width:300px;height:150px;z-index:1;background-image:var(--hab-annonce);filter:drop-shadow(0 0 24px rgba(255,210,63,.7));animation:hab-lueur 3s ease-in-out infinite}
 .hab.hab-anniversaire i.boule{right:3%;top:92px;width:150px;height:150px;opacity:.85;z-index:1;background-image:var(--hab-boule);filter:drop-shadow(0 0 36px rgba(255,255,255,.7));animation:hab-lueur 2.4s ease-in-out infinite}
-.hab-abonne.anniversaire{background-image:var(--hab-gateau);width:96px;height:96px;margin-left:-48px;bottom:calc(100% + 4px)}
+.hab-abonne.anniversaire{background-image:var(--hab-gateau);width:72px;height:72px}
 header.top{border-color:#ffd23f!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(255,210,63,.35)!important}
 @media (max-width:640px){.hab.hab-anniversaire i.annonce{width:170px;height:85px;top:76px;left:auto;right:2%}.hab.hab-anniversaire i.boule{display:none}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
 
-@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{animation:none;left:auto;right:6px;bottom:auto;top:50%;width:44px;height:44px;margin:0;transform:translateY(-50%)}
- .hab-abonne.ete{width:60px;height:30px}}
+@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{animation:none;width:44px;height:44px;margin:-4px 0 -4px 8px;transform:none}
+ .hab-abonne.ete{width:56px;height:28px}}
 :root{--hab-annonce:url(/deco/habillage-anniversaire-annonce.webp);--hab-ballon:url(/deco/habillage-anniversaire-ballon.webp);--hab-bandeau:url(/deco/habillage-anniversaire-bandeau.webp);--hab-boule:url(/deco/habillage-anniversaire-boule.webp);--hab-confetti:url(/deco/habillage-anniversaire-confetti.webp);--hab-gateau:url(/deco/habillage-anniversaire-gateau.webp)}
