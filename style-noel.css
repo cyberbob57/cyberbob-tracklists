@@ -1076,6 +1076,11 @@ header.top:has(.hab-guirlande){padding-top:40px!important}     /* l'en-tête des
 @media (max-width:640px){.hab.hab-noel i.flocon:nth-of-type(n+9){display:none}}
 @media (prefers-reduced-motion:reduce){header.top .hab-guirlande{animation:none}}
 
-@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{animation:none;width:44px;height:44px;margin:-4px 0 -4px 8px;transform:none}
- .hab-abonne.ete{width:56px;height:28px}}
+/* téléphone (CyberBob, 01/11 : « le gâteau sur smartphone devrait être à côté de S'abonner à la chaîne ») : l'objet de la rangée des chiffres
+   s'efface, sa copie se pose à droite du bouton « S'abonner », à côté */
+.hab-abonne-tel{display:none}
+@media (max-width:640px){.r-compteurs .hab-abonne{display:none}
+ .btn.r-yt{position:relative;overflow:visible}.hab-abonne-tel{display:block;position:absolute;left:100%;top:50%;width:52px;height:52px;margin-left:8px;transform:translateY(-50%);background:center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+ .hab-abonne-tel.halloween{background-image:var(--hab-citrouille)}.hab-abonne-tel.noel{background-image:var(--hab-pere-noel)}.hab-abonne-tel.ete{background-image:var(--hab-lunettes);width:64px;height:32px}
+ .hab-abonne-tel.anniversaire{background-image:var(--hab-gateau)}.hab-abonne-tel.love{background-image:var(--hab-disque)}}
 :root{--hab-bandeau:url(/deco/habillage-noel-bandeau.webp);--hab-cadeau:url(/deco/habillage-noel-cadeau.webp);--hab-flocon:url(/deco/habillage-noel-flocon.webp);--hab-guirlande:url(/deco/habillage-noel-guirlande.webp);--hab-pere-noel:url(/deco/habillage-noel-pere-noel.webp);--hab-sapin:url(/deco/habillage-noel-sapin.webp)}

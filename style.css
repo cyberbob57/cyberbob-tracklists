@@ -1069,9 +1069,18 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(255,210,63,.3),transpa
 .hab.hab-anniversaire i.boule{right:3%;top:92px;width:150px;height:150px;opacity:.85;z-index:1;background-image:var(--hab-boule);filter:drop-shadow(0 0 36px rgba(255,255,255,.7));animation:hab-lueur 2.4s ease-in-out infinite}
 .hab-abonne.anniversaire{background-image:var(--hab-gateau);width:72px;height:72px}
 header.top{border-color:#ffd23f!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(255,210,63,.35)!important}
-/* téléphone (CyberBob, 01/11 : « quand on scrolle, le 2 ans gêne la lecture ») : l'annonce reste 7 secondes puis s'efface ; sans animations, pas d'annonce */
-@media (max-width:640px){.hab.hab-anniversaire i.annonce{width:170px;height:85px;top:76px;left:auto;right:2%;animation:hab-annonce-part 1.2s ease-in 7s forwards}.hab.hab-anniversaire i.boule{display:none}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
+/* téléphone (CyberBob, 01/11 : « quand on scrolle, le 2 ans gêne la lecture », puis « entre la platine et le contour droit du cadre général ») :
+   l'annonce quitte le calque fixe et se pose DANS le cadre de l'accueil, à droite de la platine, jusqu'au bord ; elle défile avec la page */
+.hab-annonce-carte{display:none}
+@media (max-width:820px){.hab.hab-anniversaire i.annonce{display:none}.hab.hab-anniversaire i.boule{display:none}
+ .r-chaine-in{position:relative}.hab-annonce-carte{display:block;position:absolute;top:18px;left:190px;right:16px;height:130px;background:var(--hab-annonce) center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 0 16px rgba(255,210,63,.6))}}
+@media (max-width:640px){.hab-annonce-carte{left:140px;top:14px;height:110px}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
 
-@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{animation:none;width:44px;height:44px;margin:-4px 0 -4px 8px;transform:none}
- .hab-abonne.ete{width:56px;height:28px}}
+/* téléphone (CyberBob, 01/11 : « le gâteau sur smartphone devrait être à côté de S'abonner à la chaîne ») : l'objet de la rangée des chiffres
+   s'efface, sa copie se pose à droite du bouton « S'abonner », à côté */
+.hab-abonne-tel{display:none}
+@media (max-width:640px){.r-compteurs .hab-abonne{display:none}
+ .btn.r-yt{position:relative;overflow:visible}.hab-abonne-tel{display:block;position:absolute;left:100%;top:50%;width:52px;height:52px;margin-left:8px;transform:translateY(-50%);background:center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
+ .hab-abonne-tel.halloween{background-image:var(--hab-citrouille)}.hab-abonne-tel.noel{background-image:var(--hab-pere-noel)}.hab-abonne-tel.ete{background-image:var(--hab-lunettes);width:64px;height:32px}
+ .hab-abonne-tel.anniversaire{background-image:var(--hab-gateau)}.hab-abonne-tel.love{background-image:var(--hab-disque)}}
 :root{--hab-annonce:url(/deco/habillage-anniversaire-annonce.webp);--hab-ballon:url(/deco/habillage-anniversaire-ballon.webp);--hab-bandeau:url(/deco/habillage-anniversaire-bandeau.webp);--hab-boule:url(/deco/habillage-anniversaire-boule.webp);--hab-confetti:url(/deco/habillage-anniversaire-confetti.webp);--hab-gateau:url(/deco/habillage-anniversaire-gateau.webp)}
