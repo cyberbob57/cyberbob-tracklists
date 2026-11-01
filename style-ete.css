@@ -1041,10 +1041,10 @@ header.top{position:relative}
 header.top .hab-coin{position:absolute;top:0;width:130px;height:130px;pointer-events:none;background:var(--hab-toile) 0 0/100% 100% no-repeat;opacity:.85}
 header.top .hab-coin.g{left:0}header.top .hab-coin.d{right:0;transform:scaleX(-1)}
 .btn.r-yt{position:relative;overflow:visible}
-/* 01/11, 16 h 20, CyberBob : « le gâteau est en plein sur S'abonner et cache des chiffres », puis « mets le centre sur la ligne de tous les
-   chiffres » : l'objet est le dernier élément de la rangée des chiffres (mix, titres, artistes, vues), centré sur sa hauteur, à sa droite */
-.r-compteurs{align-items:center}
-.hab-abonne{display:block;width:64px;height:64px;margin:-6px 0 -6px 14px;padding:0!important;border:0!important;background:center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));animation:hab-lueur 2.6s ease-in-out infinite}
+/* 01/11, CyberBob : « je veux que le gâteau soit à côté de S'abonner, comme sur le téléphone » : l'objet de saison est posé à droite du
+   bouton « S'abonner à la chaîne », sur toutes les tailles d'écran (il a d'abord été au-dessus du bouton, puis au bout des chiffres) */
+.btn.r-yt{position:relative;overflow:visible}
+.hab-abonne{position:absolute;left:100%;top:50%;width:64px;height:64px;margin-left:10px;transform:translateY(-50%);background:center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6));animation:hab-lueur 2.6s ease-in-out infinite}
 header.top .hab-img{position:absolute;inset:0;z-index:-1;background:var(--hab-bandeau) center/cover no-repeat;opacity:.38;border-radius:inherit;pointer-events:none}
 header.top:has(.hab-img){margin-top:-18px!important;padding-top:40px!important;border-top:0!important;border-top-left-radius:0!important;border-top-right-radius:0!important}
 /* le cadre de l'en-tête monte lui-même jusqu'au bord de la page (CyberBob : « on voit par transparence le bord haut du cadre d'origine ») */
@@ -1053,6 +1053,18 @@ header.top:has(.hab-img){margin-top:-18px!important;padding-top:40px!important;b
 @keyframes hab-lueur{0%,100%{filter:drop-shadow(0 0 6px rgba(255,200,80,.6))}50%{filter:drop-shadow(0 0 16px rgba(255,220,120,1))}}
 @media (max-width:640px){header.top .hab-coin{width:80px;height:80px}}
 @media (prefers-reduced-motion:reduce){.hab i{animation:none!important}}
+/* téléphone (CyberBob, 01/11 : « quand on scrolle, le 2 ans gêne la lecture », « entre la platine et le contour droit du cadre général »,
+   puis « la lune devrait être plus grosse sur smartphone et dans le cadre également ») : l'objet-phare de la saison (CARTE) quitte le calque
+   fixe et se pose DANS le cadre de l'accueil, à droite de la platine, jusqu'au bord ; il défile avec la page */
+.hab-carte{display:none}
+@media (max-width:820px){.hab i.annonce,.hab i.boule,.hab i.lune,.hab i.soleil,.hab i.cupidon{display:none}
+ .r-chaine-in{position:relative}.hab-carte{display:block;position:absolute;top:18px;left:190px;right:16px;height:130px;background:center/contain no-repeat;pointer-events:none}
+ .hab-carte.anniversaire{background-image:var(--hab-annonce);filter:drop-shadow(0 0 16px rgba(255,210,63,.6))}
+ .hab-carte.halloween{background-image:var(--hab-lune);height:150px;top:8px;filter:drop-shadow(0 0 30px rgba(255,220,120,.8))}
+ .hab-carte.noel{background-image:var(--hab-sapin);height:160px;top:4px;filter:drop-shadow(0 0 16px rgba(74,222,128,.7))}
+ .hab-carte.ete{background-image:var(--hab-soleil);height:150px;top:8px;filter:drop-shadow(0 0 30px rgba(255,210,63,.7))}
+ .hab-carte.love{background-image:var(--hab-cupidon);height:150px;top:8px;filter:drop-shadow(0 0 20px rgba(255,111,168,.7))}}
+@media (max-width:640px){.hab-carte{left:140px;top:14px;height:110px}.hab-carte.halloween,.hab-carte.ete,.hab-carte.love{height:130px;top:6px}.hab-carte.noel{height:140px;top:0}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
 
 :root{--bleu:#19d3c5;--rouge:#ff9a3c;--degrade:linear-gradient(90deg,#19d3c5,#ffd23f,#ff9a3c)}
 body{background:radial-gradient(900px 500px at 0% 0%,rgba(25,211,197,.34),transparent 60%),radial-gradient(900px 500px at 100% 100%,rgba(255,154,60,.34),transparent 60%),linear-gradient(160deg,#06253a 0%,#0a3550 45%,#3a1a4a 75%,#5a2a10 100%);background-attachment:fixed}
@@ -1063,15 +1075,10 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(25,211,197,.34),transp
 .hab.hab-ete i.soleil{right:3%;top:92px;width:190px;height:190px;opacity:.7;background-image:var(--hab-soleil);filter:drop-shadow(0 0 46px rgba(255,210,63,.8));animation:hab-lueur 4s ease-in-out infinite}
 .hab.hab-ete .sol i{background-image:var(--hab-palmier);width:130px;height:170px;filter:drop-shadow(0 0 14px rgba(25,211,197,.7))}
 .hab.hab-ete .sol i.d{transform:scaleX(-1)}
-.hab-abonne.ete{background-image:var(--hab-lunettes);width:90px;height:45px;transform:rotate(-8deg)}
+.hab-abonne.ete{background-image:var(--hab-lunettes);width:84px;height:42px;transform:translateY(-50%) rotate(-8deg)}
 header.top{border-color:#19d3c5!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(25,211,197,.35)!important}
 @media (max-width:640px){.hab.hab-ete i.mouette{width:44px;height:22px}.hab.hab-ete i.soleil{width:100px;height:100px;top:70px}}
 
-/* téléphone (CyberBob, 01/11 : « le gâteau sur smartphone devrait être à côté de S'abonner à la chaîne ») : l'objet de la rangée des chiffres
-   s'efface, sa copie se pose à droite du bouton « S'abonner », à côté */
-.hab-abonne-tel{display:none}
-@media (max-width:640px){.r-compteurs .hab-abonne{display:none}
- .btn.r-yt{position:relative;overflow:visible}.hab-abonne-tel{display:block;position:absolute;left:100%;top:50%;width:52px;height:52px;margin-left:8px;transform:translateY(-50%);background:center/contain no-repeat;pointer-events:none;filter:drop-shadow(0 4px 8px rgba(0,0,0,.6))}
- .hab-abonne-tel.halloween{background-image:var(--hab-citrouille)}.hab-abonne-tel.noel{background-image:var(--hab-pere-noel)}.hab-abonne-tel.ete{background-image:var(--hab-lunettes);width:64px;height:32px}
- .hab-abonne-tel.anniversaire{background-image:var(--hab-gateau)}.hab-abonne-tel.love{background-image:var(--hab-disque)}}
+@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{width:52px;height:52px;margin-left:8px;animation:none}
+ .hab-abonne.ete{width:64px;height:32px}}
 :root{--hab-bandeau:url(/deco/habillage-ete-bandeau.webp);--hab-lunettes:url(/deco/habillage-ete-lunettes.webp);--hab-mouette:url(/deco/habillage-ete-mouette.webp);--hab-palmier:url(/deco/habillage-ete-palmier.webp);--hab-soleil:url(/deco/habillage-ete-soleil.webp)}
