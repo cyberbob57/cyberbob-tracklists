@@ -1,0 +1,18 @@
+# CyberBob in The Mix
+
+> CyberBob est un DJ amateur français. Sur sa chaîne YouTube et sur ce site, il publie des mix et des megamix gratuits : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce site donne la tracklist de 191 mix : chaque titre mène à sa minute exacte.
+
+## Pages principales
+
+- [Tous les mix](https://djcyberbob.com/mix/) : chaque mix avec sa tracklist, titre par titre, à la minute exacte
+- [La radio](https://djcyberbob.com/radio/) : les mix en continu, par ambiance
+- [Les styles](https://djcyberbob.com/styles/) : années 80, années 90, disco funk, italo, dance, remix
+- [Les artistes](https://djcyberbob.com/artistes/) : les mix par artiste
+- [Les morceaux les plus mixés](https://djcyberbob.com/top/) : le classement des titres
+- [L'agenda des sorties](https://djcyberbob.com/agenda/) : les prochains mix
+- [Qui est CyberBob](https://djcyberbob.com/qui-est-cyberbob/) : son histoire et sa façon de mixer
+
+## Liens
+
+- [Chaîne YouTube](https://www.youtube.com/@djcyberbob)
+- [Version anglaise du site](https://djcyberbob.com/en/)
