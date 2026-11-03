@@ -1080,7 +1080,7 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(181,108,255,.38),trans
 .hab.hab-halloween i.chs:nth-of-type(1){top:14%;animation-duration:13s}.hab.hab-halloween i.chs:nth-of-type(2){top:38%;animation-duration:17s;animation-delay:-5s;width:60px;height:30px}
 .hab.hab-halloween i.chs:nth-of-type(3){top:62%;animation-duration:15s;animation-delay:-9s}.hab.hab-halloween i.chs:nth-of-type(4){top:26%;animation-duration:21s;animation-delay:-14s;width:50px;height:25px}
 .hab.hab-halloween i.chs:nth-of-type(5){top:80%;animation-duration:19s;animation-delay:-3s;width:70px;height:35px}
-.hab.hab-halloween i.lune{right:3%;top:92px;width:170px;height:170px;opacity:.6;background-image:var(--hab-lune);filter:drop-shadow(0 0 40px rgba(255,220,120,.8))}
+.hab.hab-halloween i.lune{right:16px;top:92px;width:min(170px,calc((100vw - 1248px) / 2 - 32px));height:auto;aspect-ratio:1;opacity:.6;background-image:var(--hab-lune);filter:drop-shadow(0 0 40px rgba(255,220,120,.8))}
 .hab.hab-halloween i.fantome{left:-8%;width:90px;height:120px;opacity:.85;background-image:var(--hab-fantome);animation:hab-flotte 23s linear infinite;filter:drop-shadow(0 0 14px rgba(255,255,255,.6))}
 .hab.hab-halloween i.fantome.b{top:70%;animation-duration:31s;animation-delay:-16s}.hab.hab-halloween i.fantome.a{top:40%}
 .hab.hab-halloween .sol i{background-image:var(--hab-citrouille);animation:hab-lueur 2.6s ease-in-out infinite}

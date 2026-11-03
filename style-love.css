@@ -1081,7 +1081,7 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(255,111,168,.34),trans
 .hab.hab-love i.coeur:nth-of-type(3){left:30%;animation-duration:16s;animation-delay:-11s}.hab.hab-love i.coeur:nth-of-type(4){left:43%;animation-duration:20s;animation-delay:-3s;width:36px;height:36px}
 .hab.hab-love i.coeur:nth-of-type(5){left:56%;animation-duration:15s;animation-delay:-8s}.hab.hab-love i.coeur:nth-of-type(6){left:69%;animation-duration:22s;animation-delay:-14s;width:26px;height:26px}
 .hab.hab-love i.coeur:nth-of-type(7){left:82%;animation-duration:17s;animation-delay:-1s}.hab.hab-love i.coeur:nth-of-type(8){left:93%;animation-duration:19s;animation-delay:-10s;width:34px;height:34px}
-.hab.hab-love i.cupidon{right:3%;top:92px;width:170px;height:170px;opacity:.8;background-image:var(--hab-cupidon);filter:drop-shadow(0 0 30px rgba(255,111,168,.7))}
+.hab.hab-love i.cupidon{right:16px;top:92px;width:min(170px,calc((100vw - 1248px) / 2 - 32px));height:auto;aspect-ratio:1;opacity:.8;background-image:var(--hab-cupidon);filter:drop-shadow(0 0 30px rgba(255,111,168,.7))}
 .hab.hab-love .sol i{background-image:var(--hab-bouquet);width:120px;height:150px;filter:drop-shadow(0 0 14px rgba(255,31,75,.6))}
 .hab.hab-love .sol i.d{transform:scaleX(-1)}
 .hab-abonne.love{background-image:var(--hab-disque);animation:hab-lueur 2.6s ease-in-out infinite,hab-tourne 6s linear infinite}
