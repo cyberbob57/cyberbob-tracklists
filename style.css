@@ -1083,13 +1083,14 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(255,210,63,.3),transpa
 @keyframes hab-monte{0%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(24px,-55vh) rotate(5deg)}100%{transform:translate(-16px,-115vh) rotate(-4deg)}}
 .hab.hab-anniversaire i.confetti{width:18px;height:18px;top:-30px;opacity:.95;background-image:var(--hab-confetti);animation:hab-neige 9s linear infinite}
 .hab.hab-anniversaire i.confetti:nth-of-type(n){left:calc(var(--k)*7%)}
-.hab.hab-anniversaire i.annonce{left:16px;top:100px;width:min(300px,calc((100vw - 1248px) / 2 - 32px));height:auto;aspect-ratio:2/1;background-size:contain;background-repeat:no-repeat;z-index:1;background-image:var(--hab-annonce);filter:drop-shadow(0 0 24px rgba(255,210,63,.7));animation:hab-lueur 3s ease-in-out infinite}
+.hab.hab-anniversaire i.annonce{left:8px;top:100px;width:min(300px,calc((100vw - 1248px) / 2 - 20px));height:auto;aspect-ratio:2/1;background-size:contain;background-repeat:no-repeat;z-index:1;background-image:var(--hab-annonce);filter:drop-shadow(0 0 24px rgba(255,210,63,.7));animation:hab-lueur 3s ease-in-out infinite}
 .hab.hab-anniversaire i.boule{right:16px;top:92px;width:min(150px,calc((100vw - 1248px) / 2 - 32px));height:auto;aspect-ratio:1;background-size:contain;background-repeat:no-repeat;opacity:.85;z-index:1;background-image:var(--hab-boule);filter:drop-shadow(0 0 36px rgba(255,255,255,.7));animation:hab-lueur 2.4s ease-in-out infinite}
 /* 03/11/2026 (CyberBob : « sur mon MacBook Pro les 2 ans passent au-dessus du cadre, pareil pour la boule ») : le cadre fait au plus
    1 248 px (1 200 + marges) ; l'annonce et la boule vivent dans la MARGE qui reste de chaque côté, (100vw − 1 248) / 2. Elles se
    réduisent pour y tenir (16 px du bord, 16 px du cadre) et disparaissent quand la marge est trop étroite pour qu'elles se lisent :
    écran 29 pouces, tailles pleines ; MacBook Pro 16 pouces, réduites ; 14 pouces, la boule seule, plus petite. */
-@media (max-width:1527px){.hab.hab-anniversaire i.annonce{display:none}}
+/* 03/11 au soir (CyberBob : « on ne voit plus les 2 ans sur mon MacBook », 1 512 points) : l'annonce reste jusqu'à 1 448 px, réduite
+   (environ 112 × 56 sur le MacBook 14 pouces), à 8 px du bord et 12 px du cadre. */
 @media (max-width:1447px){.hab.hab-anniversaire i.boule,.hab.hab-halloween i.lune,.hab.hab-ete i.soleil,.hab.hab-love i.cupidon{display:none}}
 .hab-abonne.anniversaire{background-image:var(--hab-gateau);width:70px;height:70px}
 header.top{border-color:#ffd23f!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(255,210,63,.35)!important}
