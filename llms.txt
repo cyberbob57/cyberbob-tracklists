@@ -20,3 +20,10 @@
 
 - [Chaîne YouTube](https://www.youtube.com/@djcyberbob)
 - [Version anglaise du site](https://djcyberbob.com/en/)
+
+## Optional
+
+- [Toutes les tracklists, à la minute (texte complet)](https://djcyberbob.com/llms-full.txt)
+- [Flux RSS des nouveaux mix](https://djcyberbob.com/feed.xml)
+- [Agenda des sorties (iCalendar)](https://djcyberbob.com/agenda.ics)
+- [Les classements des titres les plus mixés](https://djcyberbob.com/top/)
