@@ -93,7 +93,7 @@ const pp=(li,s)=>{const b=li.querySelector('.quoi b'),a=li.querySelector('.quoi 
  bouton(T.pp_carte,()=>carte(d,{titre:titre.trim(),art,tm,u}));
  document.body.appendChild(d);d.showModal();};
 const titre0=v.dataset.titre||document.title;
-const qrLib=()=>new Promise((ok,ko)=>{if(window.qrcode)return ok();const x=document.createElement('script');x.src='https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js';x.integrity='"+QRCODE_SRI+"';x.crossOrigin='anonymous';x.onload=ok;x.onerror=ko;document.head.appendChild(x);});
+const qrLib=()=>new Promise((ok,ko)=>{if(window.qrcode)return ok();const x=document.createElement('script');x.src='https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js';x.integrity='sha384-mZT2gIty7ZDdOGkxfP6joZcYdMW1Jvj9dRlfpTmaJAKKXTqzygtB22k7FLe+KZC1';x.crossOrigin='anonymous';x.onload=ok;x.onerror=ko;document.head.appendChild(x);});
 const lignes=(c,txt,max)=>{const w=txt.split(/\s+/),L=[];let l='';w.forEach(m=>{const t=l?l+' '+m:m;if(c.measureText(t).width>max&&l){L.push(l);l=m;}else l=t;});if(l)L.push(l);return L;};
 async function carte(d,x){const z=d.querySelector('.pp-c');const W=1080,H=1350,cv=document.createElement('canvas');cv.width=W;cv.height=H;const c=cv.getContext('2d');
  const g=c.createLinearGradient(0,0,0,H);g.addColorStop(0,'#0b0716');g.addColorStop(.55,'#2a0d4a');g.addColorStop(1,'#0b0716');c.fillStyle=g;c.fillRect(0,0,W,H);
