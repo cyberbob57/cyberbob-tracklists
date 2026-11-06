@@ -1,6 +1,6 @@
 # CyberBob in The Mix — toutes les tracklists
 
-> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 191 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
+> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 192 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
 
 > CyberBob is an amateur French DJ. Free mixes and megamixes on YouTube; this file lists every mix with its full tracklist and exact timestamps.
 
@@ -8,6 +8,19 @@
 - Site : https://djcyberbob.com (anglais : https://djcyberbob.com/en/)
 - Tous les mix : https://djcyberbob.com/mix/
 - Flux RSS : https://djcyberbob.com/feed.xml — Agenda des sorties : https://djcyberbob.com/agenda.ics
+
+## Joe Dassin Megamix en Voiture - L'Été Indien, À Toi
+
+- Date : 2026-11-06 — Genre : Variété française remixée - Années 70 revisitées en version club
+- Page : https://djcyberbob.com/m/kU-usgGqQj8.html
+- Vidéo : https://www.youtube.com/watch?v=kU-usgGqQj8
+
+0:00 Joe Dassin - Il Était Une Fois Nous Deux (Chris Aeson Redrum)
+1:50 Joe Dassin - Siffler Sur La Colline (DJ RICO Re Edit)
+4:10 Joe Dassin - L'Été Indien (Fred Crouzet Rework)
+6:09 Joe Dassin - Maria (Sébastien Roche Remix)
+8:29 Joe Dassin - À Toi (David Kust Extended Remix)
+10:27 Joe Dassin - Et si tu n'existais pas (Danny Wild Remix)
 
 ## Bigroom House pour le Sport - Ma Baker, Take On Me
 
