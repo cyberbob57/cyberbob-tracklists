@@ -3,6 +3,10 @@ const sa=t=>(t||'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase(
 const P=({en:'/en',es:'/es',de:'/de',it:'/it'})[document.documentElement.lang.slice(0,2)]||'';
 const charger=async()=>{if(D)return D;try{D=await(await fetch('/recherche.json')).json()}catch(_){D={}}return D};
 const montrer=async()=>{const q=sa(i.value.trim());if(q.length<2){z.hidden=true;return}const d=await charger();let h='';
+ /* 07/11 : styles et pages par synonymes ; une année (« 1985 », « année 85 ») mène à Remonter le temps */
+ const S=(d.s||[]).filter(x=>sa(x[0]+' '+(x[2]||'')).includes(q)).slice(0,4);
+ const an=(q.match(/\b(19[5-9]\d|20[0-2]\d)\b/)||[])[1]||((m=>m?(Number(m[1])>=50?'19':'20')+m[1]:null)(q.match(/(?:^|annee|annees|an)\s*(\d\d)\b/)));
+ if(S.length||an)h+='<h4>Styles</h4>'+S.map(x=>'<a href="'+esc(P+x[1])+'">'+esc(x[0])+'</a>').join('')+(an?'<a href="'+esc(P+'/temps/?n='+an)+'">⏳ '+an+' — Remonter le temps</a>':'');
  for(const[k,lib]of[['a','Artistes'],['t','Morceaux'],['r','Remixeurs'],['m','Mix']]){const L=(d[k]||[]).filter(x=>sa(x[0]).includes(q)).slice(0,k==='m'?5:4);
   if(L.length)h+='<h4>'+lib+'</h4>'+L.map(x=>'<a href="'+esc(P+x[1])+'">'+esc(x[0])+'</a>').join('')}
  const n=(h.match(/<a /g)||[]).length;if(!n)h='<p class="vide">Rien trouvé dans les artistes, morceaux et mix. Entrée cherche dans toutes les tracklists.</p>';
