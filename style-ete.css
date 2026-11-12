@@ -227,6 +227,17 @@ body{background:#0b0716}
 @keyframes sw-roue{to{transform:rotate(360deg)}}
 @keyframes sw-fumee{0%{opacity:0;transform:translate(0,0) scale(.3)}6%{opacity:.85}30%{opacity:.5;transform:translate(-30px,-40px) scale(1.4)}70%{opacity:0;transform:translate(-90px,-120px) scale(2.4)}100%{opacity:0;transform:translate(-90px,-120px) scale(2.4)}}
 @media (prefers-reduced-motion:reduce){.sw .delorean,.sw .fum{display:none}}
+/* ⏪ 12/11/2026 : la bande du temps — les années défilent de droite à gauche derrière la DeLorean */
+.sw .bande-temps{position:absolute;left:0;right:0;bottom:calc(34% + 2px);height:46px;overflow:hidden;pointer-events:none;
+background:linear-gradient(180deg,transparent,rgba(255,45,247,.10) 45%,rgba(255,45,247,.16));
+-webkit-mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.sw .bt-defile{display:flex;width:max-content;height:100%;align-items:center;animation:sw-annees 7.5s linear infinite}
+.sw .bt-defile b{display:block;width:20vw;text-align:center;font:700 30px/1 Orbitron,system-ui,sans-serif;color:rgba(255,120,240,.30);
+text-shadow:0 0 10px rgba(255,45,247,.35);font-variant-numeric:tabular-nums;letter-spacing:.04em}
+.sw .bt-defile b.rond{color:rgba(120,220,255,.55);text-shadow:0 0 14px rgba(46,168,255,.6)}
+@keyframes sw-annees{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.sw .bt-defile{animation:none}}
+
 /* 🌍 la carte, 🔥 l'écoute de la semaine, 🕐 le moment */
 .monde{width:100%;height:auto;display:block;background:radial-gradient(ellipse at 50% 40%,#16204a,#0b0f1d 70%);border:1px solid var(--line);border-radius:16px}
 .monde .terre{fill:#1c2547;stroke:#2c3a6b;stroke-width:.6}
@@ -796,8 +807,12 @@ a.r-panneau:hover{border-color:var(--violet)}.r-suivant b{font-weight:500}
 .premiere-bloc .btn.play-all{background:#c4002a!important;color:#fff!important;border:0!important;box-shadow:none!important;animation:none!important;
 height:44px;padding:0 18px;border-radius:11px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px}
 .premiere-bloc .une-carte:hover .btn.play-all{background:#ff1f4b!important}
+/* 🪩 12/11/2026 (idée 106) : la boule 3D */
+.boule3d{display:block;width:100%;height:min(70vh,560px);margin:12px 0;border-radius:16px;background:radial-gradient(circle at 50% 40%,rgba(138,92,255,.25),transparent 60%),#0b0716;
+--poster-color:transparent}.boule-ar{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:#c4002a!important;color:#fff!important;border:0!important}
+.so-boule{margin:10px 0 0;font-size:15px}
 /* 🧩 12/11/2026 (idée 105) : la mosaïque — l'image tient dans l'écran, la carte du mix touché vient dessous */
-.mosa{position:relative;max-width:min(92vh,1000px);margin:12px auto 0}.mosa img#mosa-img{display:block;width:100%;height:auto;border-radius:12px;cursor:pointer;
+.mosa{position:relative;width:min(96vw,1800px);left:50%;transform:translateX(-50%);margin:12px 0 0}   /* 12/11 (CyberBob : « trop petite ») : hors de la colonne de texte */.mosa img#mosa-img{display:block;width:100%;height:auto;border-radius:12px;cursor:pointer;
 box-shadow:0 10px 40px rgba(0,0,0,.45)}.mosa-carte{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center;margin-top:12px;padding:12px;border-radius:12px;
 background:rgba(20,16,40,.92);border:1px solid rgba(138,92,255,.45)}.mosa-carte img{width:160px;height:90px;object-fit:cover;border-radius:8px}
 .mosa-carte b{font-size:16px;color:#fff}@media (max-width:560px){.mosa-carte{grid-template-columns:1fr}.mosa-carte img{width:100%;height:auto}}.qui-mosa{margin:6px 0 0;font-size:15px}

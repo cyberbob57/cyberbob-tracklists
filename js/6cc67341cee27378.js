@@ -1,0 +1,1 @@
+(()=>{const y=new Date().getFullYear();document.querySelectorAll('.bt-defile').forEach(d=>{const b=[...d.children];b.forEach((e,i)=>{if((i===0||i===b.length/2)&&+e.textContent<y)e.textContent=y})})})()
