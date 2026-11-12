@@ -239,7 +239,7 @@ text-shadow:0 0 10px rgba(255,45,247,.35);font-variant-numeric:tabular-nums;lett
 @media (prefers-reduced-motion:reduce){.sw .bt-defile{animation:none}}
 /* 👴 12/11/2026 : le savant qui passe la tête, en bas à gauche, une fois par visite (grands écrans seulement) */
 .savant{display:none}
-@media (min-width:1200px){.savant{display:block;position:fixed;left:0;bottom:0;width:150px;height:auto;z-index:50;pointer-events:none;
+@media (min-width:900px){.savant{display:block;position:fixed;left:0;bottom:0;width:150px;height:auto;z-index:50;pointer-events:none;
 transform:translateY(102%);transform-origin:50% 100%;filter:drop-shadow(0 0 8px rgba(255,45,247,.30))}
 .savant.passe{animation:savant-coucou 2.2s cubic-bezier(.2,.9,.25,1) both}}
 @keyframes savant-coucou{0%{transform:translateY(102%)}14%{transform:translateY(0)}22%{transform:translateY(1%) rotate(2deg)}78%{transform:translateY(0) rotate(-1deg)}100%{transform:translateY(102%)}}
