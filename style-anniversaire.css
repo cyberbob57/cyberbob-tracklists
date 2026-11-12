@@ -237,6 +237,13 @@ text-shadow:0 0 10px rgba(255,45,247,.35);font-variant-numeric:tabular-nums;lett
 .sw .bt-defile b.rond{color:rgba(120,220,255,.55);text-shadow:0 0 14px rgba(46,168,255,.6)}
 @keyframes sw-annees{to{transform:translateX(-50%)}}
 @media (prefers-reduced-motion:reduce){.sw .bt-defile{animation:none}}
+/* 👴 12/11/2026 : le savant qui passe la tête, en bas à gauche, une fois par visite (grands écrans seulement) */
+.savant{display:none}
+@media (min-width:1200px){.savant{display:block;position:fixed;left:0;bottom:0;width:150px;height:auto;z-index:50;pointer-events:none;
+transform:translateY(102%);transform-origin:50% 100%;filter:drop-shadow(0 0 8px rgba(255,45,247,.30))}
+.savant.passe{animation:savant-coucou 2.2s cubic-bezier(.2,.9,.25,1) both}}
+@keyframes savant-coucou{0%{transform:translateY(102%)}14%{transform:translateY(0)}22%{transform:translateY(1%) rotate(2deg)}78%{transform:translateY(0) rotate(-1deg)}100%{transform:translateY(102%)}}
+@media (prefers-reduced-motion:reduce){.savant{display:none}}
 
 /* 🌍 la carte, 🔥 l'écoute de la semaine, 🕐 le moment */
 .monde{width:100%;height:auto;display:block;background:radial-gradient(ellipse at 50% 40%,#16204a,#0b0f1d 70%);border:1px solid var(--line);border-radius:16px}
@@ -812,7 +819,8 @@ height:44px;padding:0 18px;border-radius:11px;font-weight:600;font-size:15px;dis
 --poster-color:transparent}.boule-ar{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);background:#c4002a!important;color:#fff!important;border:0!important}
 .so-boule{margin:10px 0 0;font-size:15px}
 /* 🧩 12/11/2026 (idée 105) : la mosaïque — l'image tient dans l'écran, la carte du mix touché vient dessous */
-.mosa{position:relative;width:min(96vw,1800px);left:50%;transform:translateX(-50%);margin:12px 0 0}   /* 12/11 (CyberBob : « trop petite ») : hors de la colonne de texte */.mosa img#mosa-img{display:block;width:100%;height:auto;border-radius:12px;cursor:pointer;
+.legale:has(.mosa){max-width:none}.legale:has(.mosa)>h1,.legale:has(.mosa)>p{text-align:center}   /* 12/11 (« trop grande et pas centrée ») */
+.mosa{position:relative;width:min(85vh,92vw,1400px);margin:12px auto 0}   /* entière dans l'écran, centrée */.mosa img#mosa-img{display:block;width:100%;height:auto;border-radius:12px;cursor:pointer;
 box-shadow:0 10px 40px rgba(0,0,0,.45)}.mosa-carte{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center;margin-top:12px;padding:12px;border-radius:12px;
 background:rgba(20,16,40,.92);border:1px solid rgba(138,92,255,.45)}.mosa-carte img{width:160px;height:90px;object-fit:cover;border-radius:8px}
 .mosa-carte b{font-size:16px;color:#fff}@media (max-width:560px){.mosa-carte{grid-template-columns:1fr}.mosa-carte img{width:100%;height:auto}}.qui-mosa{margin:6px 0 0;font-size:15px}
