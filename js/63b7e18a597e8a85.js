@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator)addEventListener('load',()=>{navigator.serviceWorker.register('/sw.js').catch(()=>{});if(matchMedia('(display-mode: standalone)').matches)navigator.serviceWorker.ready.then(r=>r.periodicSync&&r.periodicSync.register('cb-nouveautes',{minInterval:432e5})).catch(()=>{});});

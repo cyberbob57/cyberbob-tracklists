@@ -1,0 +1,30 @@
+(()=>{const T=JSON.parse(document.getElementById('mem-txt').textContent);
+const lire=k=>{try{return JSON.parse(localStorage.getItem(k))||null}catch(_){return null}};
+const ecrire=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(_){}};
+const mmss=s=>{s=Math.floor(s);const h=Math.floor(s/3600),m=Math.floor(s%3600/60),x=String(s%60).padStart(2,'0');return h?h+':'+String(m).padStart(2,'0')+':'+x:m+':'+x};
+const compter=n=>{try{if(window.goatcounter&&goatcounter.count)goatcounter.count({path:n,title:n,event:true});}catch(_){}};
+const inviter=()=>{if(document.querySelector('.abo-invite')||(lire('cb-abo')||0)>Date.now())return;const J=864e5,L=document.documentElement.lang.slice(0,2),lg=L==='fr'?'':'-'+L;
+ ecrire('cb-abo',Date.now()+30*J);const b=document.createElement('aside');b.className='abo-invite';b.setAttribute('role','status');
+ b.innerHTML='<b></b><p></p><a class="btn" target="_blank" rel="noopener" href="https://www.youtube.com/@djcyberbob?sub_confirmation=1" data-goatcounter-click="abonner-artiste-en"></a><button type="button" class="x">✕</button>';
+ b.querySelector('b').textContent=T.abo_titre;b.querySelector('p').textContent=T.abo_texte;const a=b.querySelector('a'),x=b.querySelector('.x');a.textContent=T.abo_bouton;x.setAttribute('aria-label',T.abo_fermer);
+ a.addEventListener('click',()=>{ecrire('cb-abo',Date.now()+365*J);compter('abonner-ecoute'+lg);b.remove();});x.addEventListener('click',()=>b.remove());
+ document.body.appendChild(b);compter('invite-abonnement'+lg);};
+window.cbMem={T,lire,ecrire,mmss,inviter,ecoutes:()=>lire('cb-ecoute')||{},favoris:()=>lire('cb-fav')||[]};
+const E=cbMem.ecoutes(),F=new Set(cbMem.favoris().map(f=>f.id));
+document.querySelectorAll('a.card[href]').forEach(a=>{const m=a.getAttribute('href').match(/\/m\/([\w-]{11})\.html/);if(!m)return;
+ const e=E[m[1]],b=a.querySelector('.b')||a;let txt='';
+ if(e&&e.fin)txt=T.ecoute;else if(e&&e.t>=60)txt=T.en_cours+' '+mmss(e.t);
+ if(F.has(m[1]))txt=(txt?txt+' · ':'')+'❤️';
+ if(txt){const s=document.createElement('span');s.className='mem';s.textContent=txt;b.appendChild(s);}});
+const zone=document.getElementById('memoire');if(!zone)return;
+const carte=(id,url,titre,info)=>'<a class="card" href="'+url+'"><img src="https://i.ytimg.com/vi/'+id+'/mqdefault.jpg" alt="" width="320" height="180" loading="lazy"><div class="b"><b></b><span class="mem">'+info+'</span></div></a>';
+/* 9 Nov 2026 (CyberBob : « le visuel est moche car coupé, pas entier ») : la miniature portait height="180" sur une carte de 286 px ;
+   la hauteur fixe l'emportait sur le 16/9 et « cover » rognait les côtés. #memoire .card img{height:auto} la rend entière. */
+const sur=(id,u)=>/^[\w-]{11}$/.test(id)&&/^(?:https:\/\/djcyberbob\.com)?\/(?:(?:en|es|de|it)\/)?m\/[\w-]{11}\.html$/.test(String(u||'').split(/[?#]/)[0]);   /* 11/11 (audit) */
+let h='';const enCours=Object.entries(E).filter(([id,e])=>!e.fin&&e.t>=60&&e.url&&sur(id,e.url)).sort((a,b)=>b[1].at-a[1].at).slice(0,4);
+if(enCours.length)h+='<h2>'+T.continuer+'</h2><div class="grid">'+enCours.map(([id,e])=>carte(id,e.url,e.titre,T.en_cours+' '+mmss(e.t))).join('')+'</div>';
+const fav=cbMem.favoris().filter(f=>f&&sur(f.id,f.url)).slice(0,12);
+if(fav.length)h+='<h2>'+T.favoris+'</h2><div class="grid">'+fav.map(f=>carte(f.id,f.url,f.titre,'❤️')).join('')+'</div>';
+if(!h)return;zone.innerHTML=h;
+const titres=enCours.map(([,e])=>e.titre).concat(fav.map(f=>f.titre));zone.querySelectorAll('.card b').forEach((b,i)=>b.textContent=titres[i]||'');
+zone.hidden=false;})();

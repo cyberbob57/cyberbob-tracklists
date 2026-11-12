@@ -1,0 +1,1 @@
+(()=>{const q=document.getElementById('qart'),sa=t=>t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();q.addEventListener('input',()=>{const s=sa(q.value.trim());document.querySelectorAll('#r-az a').forEach(a=>a.hidden=!!s&&!sa(a.textContent).includes(s))})})()
