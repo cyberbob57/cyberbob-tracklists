@@ -1,0 +1,7 @@
+const V='cb-202611120815';const BASE=['/','/radio/','/vendredi/','/lettre/','/monde/','/hors-ligne/','/avatar.png','/icone-192.png','/deco/hors-ligne.webp'];
+self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>c.addAll(BASE)).then(()=>self.skipWaiting()));});
+self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V&&x!=='cb-badge').map(x=>caches.delete(x)))).then(()=>self.clients.claim()));});
+self.addEventListener('fetch',e=>{const r=e.request;const u=new URL(r.url);if(r.method!=='GET'||u.origin!==location.origin)return;
+ if(r.mode==='navigate'||/\.(json|ics|xml)$/.test(u.pathname)){e.respondWith(fetch(r).then(x=>{const c=x.clone();caches.open(V).then(k=>k.put(r,c));return x;}).catch(()=>caches.match(r).then(x=>x||(r.mode==='navigate'?caches.match('/hors-ligne/'):Response.error()))));return;}
+ e.respondWith(caches.match(r).then(x=>x||fetch(r).then(y=>{if(y.ok){const c=y.clone();caches.open(V).then(k=>k.put(r,c));}return y;})));});
+self.addEventListener('periodicsync',e=>{if(e.tag!=='cb-nouveautes'||!self.navigator.setAppBadge)return;e.waitUntil(Promise.all([fetch('/nouveautes.json').then(r=>r.json()),caches.open('cb-badge').then(c=>c.match('/__badge')).then(x=>x?x.json():null)]).then(([d,s])=>{if(!s)return;const ref=new Date(s.depuis);ref.setHours(0,0,0,0);const vus=new Set(s.vus||[]);const n=Object.entries(d.mix||{}).filter(([id,j])=>new Date(j+'T12:00:00')>=ref&&!vus.has(id)).length;return n?self.navigator.setAppBadge(n):self.navigator.clearAppBadge();}).catch(()=>{}));});

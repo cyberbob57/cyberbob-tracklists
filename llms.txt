@@ -1,0 +1,51 @@
+# CyberBob in The Mix
+
+> CyberBob est un DJ amateur français. Sur sa chaîne YouTube et sur ce site, il publie des mix et des megamix gratuits : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce site donne la tracklist de 192 mix : chaque titre mène à sa minute exacte.
+
+> CyberBob is an amateur French DJ. On his YouTube channel and this site he publishes free mixes and megamixes: French pop, 80s and 90s hits, disco, Italo disco, remixes. A new mix every Monday (international) and Friday (French).
+
+## Pages principales
+
+- [Tous les mix](https://djcyberbob.com/mix/) : chaque mix avec sa tracklist, titre par titre, à la minute exacte
+- [La radio](https://djcyberbob.com/radio/) : les mix en continu, par ambiance
+- [Les styles](https://djcyberbob.com/styles/) : années 80, années 90, disco funk, italo, dance, remix
+- [Mix années 80](https://djcyberbob.com/s/annees-80.html) : le plus écouté, le plus long, le dernier sorti
+- [Mix variété française](https://djcyberbob.com/s/variete-francaise.html) : le plus écouté, le plus long, le dernier sorti
+- [Les artistes](https://djcyberbob.com/artistes/) : les mix par artiste ; sur la page d'un artiste, « Écouter tout » enchaîne tous ses titres, chacun à sa minute
+- [Les titres par année de sortie](https://djcyberbob.com/annees/) : de 1955 à 2026, chaque titre des mix rangé à l'année de l'original (une page par année, par exemple /annees/1984.html)
+- [Les morceaux les plus mixés](https://djcyberbob.com/top/) : le classement des titres
+- [L'agenda des sorties](https://djcyberbob.com/agenda/) : les prochains mix
+- [Qui est CyberBob](https://djcyberbob.com/qui-est-cyberbob/) : son histoire et sa façon de mixer
+- [Radio et presse](https://djcyberbob.com/presse/) : les émissions de radio qui ont diffusé ses mix, avec leurs affiches
+
+## Remixeurs
+
+Une page par remixeur : qui il est, et tous ses remix passés dans les mix, à la minute exacte.
+
+- [KaktuZ](https://djcyberbob.com/r/kaktuz.html) : 43 remix dans 8 mix
+- [Ced](https://djcyberbob.com/r/ced.html) : 36 remix dans 11 mix
+- [DJ RICO](https://djcyberbob.com/r/dj-rico.html) : 35 remix dans 9 mix
+- [Stef Konstan](https://djcyberbob.com/r/stef-konstan.html) : 33 remix dans 9 mix
+- [David Kust](https://djcyberbob.com/r/david-kust.html) : 19 remix dans 9 mix
+- [DJ Iván Santana](https://djcyberbob.com/r/dj-ivan-santana.html) : 17 remix dans 8 mix
+- [Absolut Bibiche](https://djcyberbob.com/r/absolut-bibiche.html) : 15 remix dans 6 mix
+- [Funkastik](https://djcyberbob.com/r/funkastik.html) : 15 remix dans 5 mix
+- [Jesse Marshall](https://djcyberbob.com/r/jesse-marshall.html) : 15 remix dans 2 mix
+- [Dario Caminita](https://djcyberbob.com/r/dario-caminita.html) : 12 remix dans 6 mix
+- [DJ EDDY](https://djcyberbob.com/r/dj-eddy.html) : 10 remix dans 3 mix
+- [Igor Blaska](https://djcyberbob.com/r/igor-blaska.html) : 10 remix dans 2 mix
+- [Sebastien Kills](https://djcyberbob.com/r/sebastien-kills.html) : 7 remix dans 2 mix
+- [Hlynur Sölvi](https://djcyberbob.com/r/hlynur-solvi.html) : 6 remix dans 2 mix
+- [John Cost](https://djcyberbob.com/r/john-cost.html) : 6 remix dans 3 mix
+
+## Liens
+
+- [Chaîne YouTube](https://www.youtube.com/@djcyberbob)
+- [Version anglaise du site](https://djcyberbob.com/en/)
+
+## Optional
+
+- [Toutes les tracklists, à la minute (texte complet)](https://djcyberbob.com/llms-full.txt)
+- [Flux RSS des nouveaux mix](https://djcyberbob.com/feed.xml)
+- [Agenda des sorties (iCalendar)](https://djcyberbob.com/agenda.ics)
+- [Les classements des titres les plus mixés](https://djcyberbob.com/top/)
