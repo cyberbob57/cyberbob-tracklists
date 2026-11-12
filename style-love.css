@@ -796,6 +796,13 @@ a.r-panneau:hover{border-color:var(--violet)}.r-suivant b{font-weight:500}
 .premiere-bloc .btn.play-all{background:#c4002a!important;color:#fff!important;border:0!important;box-shadow:none!important;animation:none!important;
 height:44px;padding:0 18px;border-radius:11px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px}
 .premiere-bloc .une-carte:hover .btn.play-all{background:#ff1f4b!important}
+/* 🔴 12/11/2026 (idée 99) : la Première en direct (/direct/) et son lien sous le bloc de l'accueil */
+.premiere-direct{margin:10px 2px 0;font-size:14px}.premiere-direct a{color:#ff6b86}
+.direct .kind{color:#ff6b86;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px;margin:0}
+.direct-titre{display:grid;gap:4px;margin:14px 0;padding:16px 18px;border-radius:14px;background:rgba(196,0,42,.14);border:1px solid rgba(255,31,75,.45)}
+.direct-titre b{font-size:26px;line-height:1.2;color:#fff}.direct-titre span{font-size:17px;color:#d5daf0}
+.direct-barre{height:6px;border-radius:3px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:8px}.direct-barre i{display:block;height:100%;background:#ff1f4b;transition:width 1s linear}
+@media (prefers-reduced-motion: reduce){.direct-barre i{transition:none}}
 .r-deux .album-info .btn.play-all{background:#c4002a!important;color:#fff!important;border:0!important;box-shadow:none!important;animation:none!important}
 .r-deux .album-info .btn.play-all .tri{border-left-color:#fff!important}.r-deux .album-info .btn.play-all:hover{background:#ff1f4b!important}
 /* ⏳ l'horloge de la DeLorean (circuits temporels) : rouge, vert, orange, chiffres lumineux sur fond noir */
