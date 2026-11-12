@@ -796,6 +796,11 @@ a.r-panneau:hover{border-color:var(--violet)}.r-suivant b{font-weight:500}
 .premiere-bloc .btn.play-all{background:#c4002a!important;color:#fff!important;border:0!important;box-shadow:none!important;animation:none!important;
 height:44px;padding:0 18px;border-radius:11px;font-weight:600;font-size:15px;display:inline-flex;align-items:center;gap:8px}
 .premiere-bloc .une-carte:hover .btn.play-all{background:#ff1f4b!important}
+/* 🧩 12/11/2026 (idée 105) : la mosaïque — l'image tient dans l'écran, la carte du mix touché vient dessous */
+.mosa{position:relative;max-width:min(92vh,1000px);margin:12px auto 0}.mosa img#mosa-img{display:block;width:100%;height:auto;border-radius:12px;cursor:pointer;
+box-shadow:0 10px 40px rgba(0,0,0,.45)}.mosa-carte{display:grid;grid-template-columns:160px 1fr;gap:12px;align-items:center;margin-top:12px;padding:12px;border-radius:12px;
+background:rgba(20,16,40,.92);border:1px solid rgba(138,92,255,.45)}.mosa-carte img{width:160px;height:90px;object-fit:cover;border-radius:8px}
+.mosa-carte b{font-size:16px;color:#fff}@media (max-width:560px){.mosa-carte{grid-template-columns:1fr}.mosa-carte img{width:100%;height:auto}}.qui-mosa{margin:6px 0 0;font-size:15px}
 /* 🔴 12/11/2026 (idée 99) : la Première en direct (/direct/) et son lien sous le bloc de l'accueil */
 .premiere-direct{margin:10px 2px 0;font-size:14px}.premiere-direct a{color:#ff6b86}
 .direct .kind{color:#ff6b86;font-weight:600;letter-spacing:.04em;text-transform:uppercase;font-size:13px;margin:0}
