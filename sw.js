@@ -1,4 +1,4 @@
-const V='cb-202611121436';const BASE=['/','/radio/','/vendredi/','/lettre/','/monde/','/hors-ligne/','/en/hors-ligne/','/es/hors-ligne/','/de/hors-ligne/','/it/hors-ligne/','/avatar.png','/icone-192.png','/deco/hors-ligne.webp'];
+const V='cb-202611121452';const BASE=['/','/radio/','/vendredi/','/lettre/','/monde/','/hors-ligne/','/en/hors-ligne/','/es/hors-ligne/','/de/hors-ligne/','/it/hors-ligne/','/avatar.png','/icone-192.png','/deco/hors-ligne.webp'];
 const HL=p=>{const m=/^\/(en|es|de|it)\//.exec(p);return m?caches.match('/'+m[1]+'/hors-ligne/').then(x=>x||caches.match('/hors-ligne/')):caches.match('/hors-ligne/');};
 self.addEventListener('install',e=>{e.waitUntil(caches.open(V).then(c=>Promise.all(BASE.map(u=>c.add(u).catch(()=>{})))).then(()=>self.skipWaiting()));});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(k=>Promise.all(k.filter(x=>x!==V&&x!=='cb-badge').map(x=>caches.delete(x)))).then(()=>self.clients.claim()));});
