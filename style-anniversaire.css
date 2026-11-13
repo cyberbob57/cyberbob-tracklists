@@ -211,12 +211,16 @@ nav.menu a{font-size:13px;padding:5px 8px}}
 body{background:#0b0716}
 .sw{display:block;position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;background:linear-gradient(180deg,#0b0716 0%,#1a0b33 48%,#4a1160 66%,#0b0716 66.2%)}
 .sw::after{content:"";position:absolute;left:0;right:0;top:66%;height:2px;background:#ff5ef7;box-shadow:0 0 18px 4px #ff2df7,0 0 80px 20px #ff2df755}
-.sw .sol{position:absolute;left:-50%;right:-50%;top:66%;bottom:-40%;transform-origin:50% 0;transform:perspective(320px) rotateX(62deg);background-image:linear-gradient(#ff2df7aa 2px,transparent 2px),linear-gradient(90deg,#ff2df7aa 2px,transparent 2px);background-size:80px 80px;animation:sw-roule 2.2s linear infinite;-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%);mask-image:linear-gradient(180deg,transparent,#000 25%)}
+/* 13/11/2026 (CyberBob : « le site est hyper lent ») : la grille avançait en décalant son motif (background-position), ce qui
+   redessinait ses 3 400 × 400 px à chaque image : mesuré, 14 points du processeur graphique de Chrome par onglet ouvert. Elle avance
+   maintenant par un déplacement d'une case (transform), que le processeur graphique fait seul ; même dessin, même vitesse. */
+.sw .sol{position:absolute;left:-50%;right:-50%;top:66%;bottom:-40%;overflow:hidden;transform-origin:50% 0;transform:perspective(320px) rotateX(62deg);-webkit-mask-image:linear-gradient(180deg,transparent,#000 25%);mask-image:linear-gradient(180deg,transparent,#000 25%)}
+.sw .sol::before{content:"";position:absolute;left:0;right:0;top:-80px;bottom:0;background-image:linear-gradient(#ff2df7aa 2px,transparent 2px),linear-gradient(90deg,#ff2df7aa 2px,transparent 2px);background-size:80px 80px;will-change:transform;animation:sw-roule 2.2s linear infinite}
 .sw .etoiles{position:absolute;inset:0 0 40% 0;background-image:radial-gradient(1.5px 1.5px at 20% 30%,#fff9,transparent),radial-gradient(1px 1px at 70% 18%,#fff8,transparent),radial-gradient(1.2px 1.2px at 85% 40%,#fff7,transparent),radial-gradient(1px 1px at 10% 12%,#fff8,transparent),radial-gradient(1.4px 1.4px at 92% 8%,#fff9,transparent),radial-gradient(1px 1px at 5% 50%,#fff6,transparent),radial-gradient(1.2px 1.2px at 33% 6%,#fff7,transparent),radial-gradient(1px 1px at 62% 44%,#fff6,transparent)}
 .wrap,footer.site{position:relative;z-index:1}
 }
-@keyframes sw-roule{to{background-position:0 80px}}
-@media (prefers-reduced-motion:reduce){.sw .sol{animation:none}}
+@keyframes sw-roule{to{transform:translateY(80px)}}
+@media (prefers-reduced-motion:reduce){.sw .sol::before{animation:none}}
 /* 🚗 la DeLorean de l'accueil (30/10/2026) : sur l'horizon, derrière le contenu, en boucle ; rien sous 1 200 px (le .sw est caché) */
 .sw .delorean{position:absolute;left:0;bottom:34%;width:min(11vw,200px);transform:translate(-130%,14.5%);will-change:transform;filter:drop-shadow(0 0 10px rgba(255,45,247,.55));animation:sw-delorean 7.5s linear infinite}
 .sw .delorean img{width:100%;height:auto;display:block}
