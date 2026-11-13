@@ -1,6 +1,6 @@
 # CyberBob in The Mix — toutes les tracklists
 
-> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 192 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
+> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 193 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
 
 > CyberBob is an amateur French DJ. Free mixes and megamixes on YouTube; this file lists every mix with its full tracklist and exact timestamps.
 
@@ -8,6 +8,21 @@
 - Site : https://djcyberbob.com (anglais : https://djcyberbob.com/en/)
 - Tous les mix : https://djcyberbob.com/mix/
 - Flux RSS : https://djcyberbob.com/feed.xml — Agenda des sorties : https://djcyberbob.com/agenda.ics
+
+## Chanson Française Année 70 80 Apéro - Joe Dassin, Goldman
+
+- Date : 2026-11-13 — Genre : Chanson française en remix - années 70 et 80
+- Page : https://djcyberbob.com/m/JKH1Z7Cw0CE.html
+- Vidéo : https://www.youtube.com/watch?v=JKH1Z7Cw0CE
+
+0:00 CYBERBOB - Mission Impossible Intro
+0:42 Céline Dion - Pour que tu m'aimes encore (Danny Wild Remix)
+3:07 Joe Dassin - Et si tu n'existais pas (Danny Wild Remix)
+5:32 Jean-Jacques Goldman - Encore Un Matin (Danny Wild Rework)
+8:06 Images Feat. Jean Louis & Danny Wild - Les Démons de Minuit" (Remix 40ème Anniversaire Extended)
+10:30 Véronique Sanson - Amoureuse (Danny Wild Extended Remix)
+13:06 Joe Dassin - A Toi (Danny Wild Extended Remix)
+15:31 France Gall - Besoin d'Amour (Danny Wild Extended Remix)
 
 ## Fake Music Remix pour le Sport - Billie Jean, Satisfaction
 
