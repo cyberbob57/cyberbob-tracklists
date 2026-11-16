@@ -1,6 +1,6 @@
 # CyberBob in The Mix — toutes les tracklists
 
-> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 193 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
+> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 194 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
 
 > CyberBob is an amateur French DJ. Free mixes and megamixes on YouTube; this file lists every mix with its full tracklist and exact timestamps.
 
@@ -8,6 +8,19 @@
 - Site : https://djcyberbob.com (anglais : https://djcyberbob.com/en/)
 - Tous les mix : https://djcyberbob.com/mix/
 - Flux RSS : https://djcyberbob.com/feed.xml — Agenda des sorties : https://djcyberbob.com/agenda.ics
+
+## Disco Année 80 Remix Soirée Rétro - Village People, Donna Summer
+
+- Date : 2026-11-16
+- Page : https://djcyberbob.com/m/Y0Un-zsPzbM.html
+- Vidéo : https://www.youtube.com/watch?v=Y0Un-zsPzbM
+
+0:00 In The Navy (Dj Getdown Remix) - Village People
+1:46 Rondo Veneziano - La Serenissima (Tommy Marcus Rework) - Tommy Marcus
+3:51 In Private (Mindsoft-D Extended Rework Version) - Dusty Springfield
+6:34 The Reflex (Dario Caminita Revibe) - Duran Duran
+9:02 Let's All Chant (Moreno J Remix) - Michael Zager Band
+11:58 On The Radio (Digital Visions 2021 Re-visit) - Donna Summer
 
 ## Chanson Française Année 70 80 Apéro - Joe Dassin, Goldman
 

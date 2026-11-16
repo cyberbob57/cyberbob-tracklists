@@ -1,6 +1,6 @@
 # CyberBob in The Mix
 
-> CyberBob est un DJ amateur français. Sur sa chaîne YouTube et sur ce site, il publie des mix et des megamix gratuits : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce site donne la tracklist de 193 mix : chaque titre mène à sa minute exacte.
+> CyberBob est un DJ amateur français. Sur sa chaîne YouTube et sur ce site, il publie des mix et des megamix gratuits : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce site donne la tracklist de 194 mix : chaque titre mène à sa minute exacte.
 
 > CyberBob is an amateur French DJ. On his YouTube channel and this site he publishes free mixes and megamixes: French pop, 80s and 90s hits, disco, Italo disco, remixes. A new mix every Monday (international) and Friday (French).
 
@@ -31,7 +31,7 @@ Une page par remixeur : qui il est, et tous ses remix passés dans les mix, à l
 - [Absolut Bibiche](https://djcyberbob.com/r/absolut-bibiche.html) : 15 remix dans 6 mix
 - [Funkastik](https://djcyberbob.com/r/funkastik.html) : 15 remix dans 5 mix
 - [Jesse Marshall](https://djcyberbob.com/r/jesse-marshall.html) : 15 remix dans 2 mix
-- [Dario Caminita](https://djcyberbob.com/r/dario-caminita.html) : 12 remix dans 6 mix
+- [Dario Caminita](https://djcyberbob.com/r/dario-caminita.html) : 13 remix dans 7 mix
 - [DJ EDDY](https://djcyberbob.com/r/dj-eddy.html) : 10 remix dans 3 mix
 - [Igor Blaska](https://djcyberbob.com/r/igor-blaska.html) : 10 remix dans 2 mix
 - [Sebastien Kills](https://djcyberbob.com/r/sebastien-kills.html) : 7 remix dans 2 mix
