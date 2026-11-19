@@ -346,7 +346,7 @@ box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 22px rgba(90,169,255,.25);background:
 .presse .p-eq-jeu i{width:5px;animation-play-state:paused}.presse.joue .p-eq-jeu i{animation-play-state:running}.presse .p-sans .p-eq-jeu{border-radius:0 0 20px 20px}
 /* 📻 19/11/2026 (CyberBob : « 4 passages par ligne », sa bannière, « filtres par radio, affiches mises en valeur, lecteurs intégrés », « pas aussi chargé ») */
 .legale-radio{max-width:1320px}
-.p-banniere{margin:0 0 18px;border-radius:20px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.45),0 0 0 1px rgba(124,58,237,.35)}.p-banniere img{display:block;width:100%;height:auto;margin:0;border-radius:0}
+.p-banniere{position:relative;margin:0 0 20px;border-radius:20px;overflow:hidden;box-shadow:0 22px 60px rgba(0,0,0,.45),0 0 0 1px rgba(124,58,237,.35)}.p-banniere img{display:block;width:100%;height:auto;margin:0;border-radius:0}
 .legale-radio .pitch{font-size:16px;margin:4px auto 20px}
 .p-filtres{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;margin:0 0 22px}
 .p-fr,.p-fa{display:flex;flex-wrap:wrap;gap:8px}
@@ -361,14 +361,33 @@ box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 22px rgba(90,169,255,.25);background:
 .p-grille .presse:hover .p-aff>img:first-child{transform:scale(1.04)}
 .p-grille .presse .p-sans{max-width:none;border-radius:18px 18px 0 0;box-shadow:none}
 .p-grille .presse .p-sans img{width:62%;height:auto;object-fit:contain}
-.p-grille .presse .p-aff img.p-badge{position:absolute;top:10px;left:10px;width:56px!important;height:56px!important;max-width:56px;z-index:2;object-fit:contain;margin:0;border-radius:50%;background:rgba(10,12,24,.55);box-shadow:0 6px 18px rgba(0,0,0,.5);transform:none!important}
+.p-date{display:flex;align-items:center;gap:10px;margin:0 0 12px}.p-grille .presse .p-date .quand{margin:0}
+.p-grille .presse img.p-logo{width:30px;height:30px;object-fit:contain;margin:0;padding:0;border-radius:50%;background:rgba(255,255,255,.06);box-shadow:0 0 0 1px rgba(255,255,255,.14);flex:none}
+.p-radios{position:absolute;display:grid;grid-template-columns:repeat(var(--col,2),auto);place-content:center;gap:7% 12%;container-type:size}
+.p-rond{width:42cqh;height:42cqh;aspect-ratio:1/1;padding:0;border:0;border-radius:50%;background:none;cursor:pointer;box-shadow:0 0 0 2px rgba(255,255,255,.18),0 0 18px rgba(45,212,255,.45);transition:transform .2s,box-shadow .2s}
+.p-rond img{display:block;width:100%;height:100%;object-fit:cover;margin:0;border-radius:50%}.p-rond:hover,.p-rond:focus-visible{transform:scale(1.08);box-shadow:0 0 0 2px #fff,0 0 26px rgba(255,45,117,.8)}
+.p-mail{position:absolute;display:block;border-radius:999px;transition:box-shadow .2s,background .2s}.p-mail:hover,.p-mail:focus-visible{background:rgba(255,45,117,.12);box-shadow:0 0 0 2px rgba(255,255,255,.7),0 0 28px rgba(255,45,117,.8)}.btn-contact{display:inline-block;font-weight:800;font-size:17px;color:#fff;text-decoration:none;padding:11px 26px;border-radius:999px;background:rgba(255,45,117,.12);border:1px solid rgba(255,45,117,.7);box-shadow:0 0 18px rgba(255,45,117,.35);transition:box-shadow .2s,background .2s}.btn-contact:hover{background:rgba(255,45,117,.24);box-shadow:0 0 26px rgba(255,45,117,.6)}
 .p-grille .p-corps{display:flex;flex-direction:column;padding:14px 16px 16px;flex:1}
-.p-grille .presse h2{font-size:15px;font-weight:700;margin:0 0 4px;color:var(--muted);letter-spacing:.3px;text-transform:uppercase}.p-grille .presse h2 a{color:inherit}
+.p-grille .presse h2{gap:8px;font-size:15px;font-weight:700;margin:0 0 6px;color:var(--muted);letter-spacing:.3px;text-transform:uppercase}.p-grille .presse h2 a{color:inherit}
 .p-grille .presse .emission{font-size:17px;line-height:1.25;margin:0 0 10px}
 .p-grille .presse .quand{align-self:flex-start;margin:0 0 12px}
 .p-grille .presse .ecoute{margin:auto 0 6px;text-align:left}.p-grille .presse .btn-ecoute{width:100%;padding:11px 14px;font-size:15px;text-align:center}
 .p-grille .presse .p-lect{margin:6px 0 0;gap:10px}.p-grille .presse .p-tps{min-width:86px;font-size:12px}
 .p-det{margin:10px 0 0;font-size:14px}.p-det summary{cursor:pointer;color:var(--muted);font-weight:700;font-size:13px}.p-det p{margin:8px 0 0}
+.p-grille .p-corps{min-width:0}.p-grille .presse .p-lect{display:grid;grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"play onde dl" "play tps dl";align-items:center;column-gap:10px;row-gap:2px;min-width:0;max-width:none;margin:auto 0 8px;padding:8px 10px;border-radius:14px;background:rgba(6,10,26,.7);border:1px solid rgba(45,212,255,.22)}
+.p-play{grid-area:play;flex:none;display:grid;place-items:center;width:40px;height:40px;padding:0;border:0;border-radius:50%;cursor:pointer;color:#fff;font:700 15px/1 system-ui,sans-serif;text-decoration:none;background:linear-gradient(135deg,#1f6bff,#2dd4ff);box-shadow:0 0 14px rgba(45,212,255,.55);transition:transform .15s,box-shadow .2s}
+.p-play:hover{transform:scale(1.07);box-shadow:0 0 22px rgba(45,212,255,.8)}.p-play .t-play{margin-left:2px}.p-play .t-pause{display:none;line-height:0}
+.presse.joue .p-play .t-play{display:none}.presse.joue .p-play .t-pause{display:block}
+.p-onde{grid-area:onde;flex:1;min-width:0;height:28px;display:flex;align-items:center;gap:2px;cursor:pointer;outline-offset:3px}
+.p-onde i{flex:1;min-width:1px;height:var(--h);border-radius:2px;background:rgba(255,255,255,.3);transition:background .2s}.p-onde i.lu{background:#2dd4ff;box-shadow:0 0 6px rgba(45,212,255,.6)}
+.presse.joue .p-onde i{animation:onde .8s ease-in-out infinite alternate;animation-delay:var(--d)}
+@keyframes onde{from{transform:scaleY(.4)}to{transform:scaleY(1.12)}}
+.p-grille .presse .p-tps{grid-area:tps;justify-self:end;flex:none;min-width:0;font-size:11px;font-weight:700;white-space:nowrap;color:var(--muted);text-decoration:none}
+.p-dl{grid-area:dl;flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:8px;color:#cfe9ff;text-decoration:none}.p-dl:hover{color:#fff;background:rgba(45,212,255,.18)}
+.p-ext .p-onde{cursor:default}
+@media (prefers-reduced-motion:reduce){.presse.joue .p-onde i{animation:none}}
+/* 19/11 (CyberBob : « la date du lot 49 doit être alignée avec les autres ») : la même hauteur de titre partout (3 lignes) */
+@media (min-width:601px){.p-grille .presse .emission{min-height:3.75em}}
 @media (max-width:1100px){.p-grille{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.p-grille{grid-template-columns:1fr}.p-filtres{justify-content:flex-start}.p-banniere{border-radius:12px}}
 @media (prefers-reduced-motion:reduce){.p-eq i{animation:none;height:50%}.presse,.presse .p-aff img{transition:none}}
