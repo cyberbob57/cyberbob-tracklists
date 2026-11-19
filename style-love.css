@@ -383,6 +383,7 @@ box-shadow:0 10px 28px rgba(0,0,0,.45),0 0 22px rgba(90,169,255,.25);background:
 .presse.joue .p-onde i{animation:onde .8s ease-in-out infinite alternate;animation-delay:var(--d)}
 @keyframes onde{from{transform:scaleY(.4)}to{transform:scaleY(1.12)}}
 .p-grille .presse .p-tps{grid-area:tps;justify-self:end;flex:none;min-width:0;font-size:11px;font-weight:700;white-space:nowrap;color:var(--muted);text-decoration:none}
+.p-dl.charge svg{animation:pdl 1s ease-in-out infinite}@keyframes pdl{50%{transform:translateY(3px);opacity:.4}}
 .p-dl{grid-area:dl;flex:none;display:grid;place-items:center;width:30px;height:30px;border-radius:8px;color:#cfe9ff;text-decoration:none}.p-dl:hover{color:#fff;background:rgba(45,212,255,.18)}
 .p-ext .p-onde{cursor:default}
 @media (prefers-reduced-motion:reduce){.presse.joue .p-onde i{animation:none}}
