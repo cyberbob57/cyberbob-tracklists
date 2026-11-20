@@ -224,10 +224,13 @@ body{background:#0b0716}
 /* 🚗 la DeLorean de l'accueil (30/10/2026) : sur l'horizon, derrière le contenu, en boucle ; rien sous 1 200 px (le .sw est caché) */
 .sw .delorean{position:absolute;left:0;bottom:34%;width:min(11vw,200px);transform:translate(-130%,14.5%);will-change:transform;filter:drop-shadow(0 0 10px rgba(255,45,247,.55));animation:sw-delorean 7.5s linear infinite}
 .sw .delorean img{width:100%;height:auto;display:block}
-.sw .delorean .roue{position:absolute;top:57%;width:13.5%;aspect-ratio:1;border-radius:50%;opacity:.75;mix-blend-mode:screen;background:repeating-conic-gradient(rgba(255,255,255,.7) 0 10deg,transparent 10deg 30deg);-webkit-mask:radial-gradient(circle,transparent 22%,#000 26%,#000 78%,transparent 82%);mask:radial-gradient(circle,transparent 22%,#000 26%,#000 78%,transparent 82%);animation:sw-roue .22s linear infinite}
+.sw .delorean .roue{position:absolute;top:57%;width:13.5%;aspect-ratio:1;border-radius:50%;opacity:.75;mix-blend-mode:screen;background:repeating-conic-gradient(rgba(255,255,255,.7) 0 10deg,transparent 10deg 30deg);-webkit-mask:radial-gradient(circle,transparent 22%,#000 26%,#000 78%,transparent 82%);mask:radial-gradient(circle,transparent 22%,#000 26%,#000 78%,transparent 82%);animation:sw-roue .6s linear infinite}
 .sw .delorean .roue.av{left:14.8%}.sw .delorean .roue.ar{left:72.6%}
 .sw .fum{position:absolute;bottom:32.5%;margin-left:-80px;border-radius:50%;opacity:0;pointer-events:none;filter:blur(7px);background:radial-gradient(circle at 45% 55%,rgba(235,225,245,.85),rgba(210,200,230,.45) 45%,transparent 70%);animation:sw-fumee 7.5s ease-out infinite}
 @keyframes sw-delorean{0%{transform:translate(-130%,14.5%)}93.33%{transform:translate(calc(100vw + 60%),14.5%)}93.43%,100%{transform:translate(-130%,14.5%)}}
+/* 20/11/2026 (CyberBob : « les roues ne tournent pas dans le bon sens ») : le sens était juste (la voiture va vers la droite, roues dans le
+ sens des aiguilles), mais un tour en .22 s avançait les rayons (tous les 30°) de 27° par image à 60 images/s : l'œil les voyait reculer
+ (effet stroboscopique). En .6 s : 10° par image, le vrai sens se voit. */
 @keyframes sw-roue{to{transform:rotate(360deg)}}
 @keyframes sw-fumee{0%{opacity:0;transform:translate(0,0) scale(.3)}6%{opacity:.85}30%{opacity:.5;transform:translate(-30px,-40px) scale(1.4)}70%{opacity:0;transform:translate(-90px,-120px) scale(2.4)}100%{opacity:0;transform:translate(-90px,-120px) scale(2.4)}}
 @media (prefers-reduced-motion:reduce){.sw .delorean,.sw .fum{display:none}}
@@ -721,6 +724,22 @@ body{padding-bottom:70px}
 .r-chaine-in{border-radius:22px;background:radial-gradient(600px 300px at 0% 0%,rgba(46,168,255,.22),transparent 60%),radial-gradient(600px 300px at 100% 100%,rgba(255,31,75,.2),transparent 60%),rgba(13,9,28,.94);
 display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:30px;align-items:center;padding:28px 32px}
 .r-chaine .vinyle{margin:0}.r-chaine .cassette{margin:0}
+/* 20/11/2026 (CyberBob : « embellir le cadre avec la platine et la cassette, sans surcharger, dans les tons de la chaîne » → « oui, pose-le ») :
+ le contour néon fait lentement le tour du cadre (14 s), un sol quadrillé rose discret au bas, un halo rose sous la platine et bleu sous la
+ cassette, la cassette éclaircie. Tout en CSS, rien à charger ; immobile si on demande moins d'animations (règle générale). */
+@property --cb-a{syntax:"<angle>";inherits:false;initial-value:0deg}
+.r-chaine{background:conic-gradient(from var(--cb-a),#2ea8ff,#8a5cff,#ff2df7,#ff3c6e,#8a5cff,#2ea8ff);animation:cb-tour 14s linear infinite;
+box-shadow:0 0 22px rgba(255,45,247,.28),0 0 50px rgba(46,168,255,.14),0 18px 40px rgba(0,0,0,.55)}
+@keyframes cb-tour{to{--cb-a:360deg}}
+.r-chaine-in{position:relative;overflow:hidden;isolation:isolate}
+.r-chaine-in::after{content:"";position:absolute;left:-10%;right:-10%;bottom:0;height:42%;z-index:-1;pointer-events:none;opacity:.9;
+background:linear-gradient(to top,rgba(255,45,247,.22),transparent 70%),repeating-linear-gradient(90deg,rgba(255,60,200,.5) 0 1px,transparent 1px 60px),
+repeating-linear-gradient(0deg,rgba(255,60,200,.5) 0 1px,transparent 1px 22px);transform:perspective(260px) rotateX(58deg);transform-origin:bottom;
+-webkit-mask:linear-gradient(to top,#000 10%,transparent 95%);mask:linear-gradient(to top,#000 10%,transparent 95%)}
+.r-chaine-in::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+background:radial-gradient(420px 160px at 12% 100%,rgba(255,45,247,.22),transparent 70%),radial-gradient(420px 160px at 88% 100%,rgba(46,168,255,.2),transparent 70%)}
+.r-chaine .cassette video{filter:brightness(1.25) saturate(1.2) drop-shadow(0 0 14px rgba(46,168,255,.45))}
+.r-chaine img[src*="haut-platine"]{filter:drop-shadow(0 0 16px rgba(255,45,247,.45))}
 .r-eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#ff8aa0}
 .r-chaine h1{font-family:"Orbitron",sans-serif;font-weight:800;font-size:36px;line-height:1.1;margin:8px 0 10px;background:linear-gradient(90deg,#7fd3ff,#c4a8ff 50%,#ff8aa0);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
 .r-chaine p{margin:0 0 16px;color:var(--doux);max-width:58ch}
