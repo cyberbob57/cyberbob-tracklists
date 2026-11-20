@@ -510,12 +510,17 @@ html body .r-ronds a[aria-label="YouTube"]:hover{background:rgba(255,0,51,.22)}
 /* 21/11/2026, CyberBob : « dans Chaîne YouTube de mix DJ, mets le logo YouTube devant en plus grand, et l'écriture aussi, tout en restant harmonieux » */
 html body .r-eyebrow{gap:12px;font-size:15px;font-weight:700;letter-spacing:.14em;color:#ff9db0;text-shadow:0 0 10px rgba(255,0,51,.45);margin-bottom:4px}
 html body .r-eyebrow svg{width:40px;height:40px;flex:none;filter:drop-shadow(0 0 8px rgba(255,0,51,.6))}
+/* 21/11/2026, CyberBob : « mets le code DJ.Studio avec un fond jaune » (le jaune du logo DJ.Studio) */
+html body .code-promo{background:#ffe600;color:#111;font-weight:800;box-shadow:0 0 12px rgba(255,230,0,.55)}
+/* 21/11/2026 : les logos des radios (page des passages) sont des liens vers le site officiel */
+a.p-rond{display:block;cursor:pointer}a.p-logo-lien{display:inline-flex;line-height:0}a.p-logo-lien:hover .p-logo{transform:scale(1.08);box-shadow:0 0 12px rgba(255,31,75,.7)}
+.p-logo{transition:transform .15s,box-shadow .15s}.p-aff.p-sans>a{display:contents}
 @media (max-width:640px){html body .r-eyebrow{font-size:13px;gap:10px}html body .r-eyebrow svg{width:32px;height:32px}}
 /* 21/11 (CyberBob : « on ne voit pas que les noms sont posés sur un triangle, mets en perspective » ; « qu'il tourne lentement sur lui-même ») : rotation continue en 14 s, prisme vu de trois quarts */
-/* 21/11 : les faces 2 et 3 portent style=display:none dans la page : avec un style.css ancien (cache Cloudflare 4 h), une seule face s'affiche */
+/* 21/11 : .pr-in porte style=animation:none (le nouveau style le reprend en !important) : avec un ancien style.css, le prisme reste sur la face 1. Les faces 2 et 3 portent style=display:none dans la page : avec un style.css ancien (cache Cloudflare 4 h), une seule face s'affiche */
 /* 21/11/2026, CyberBob : « CyberBob in The Mix » en haut à gauche tourne comme sur un prisme à 3 faces, chaque face avec un fond différent */
 header.top .brand .nom.prisme{display:inline-block;perspective:230px;perspective-origin:50% 50%;height:34px;line-height:34px;margin:0 6px}
-header.top .prisme .pr-in{display:grid;height:34px;transform-style:preserve-3d;transform:rotateY(-16deg) rotateX(0deg);animation:pr-tourne 14s linear infinite}
+header.top .prisme .pr-in{display:grid;height:34px;transform-style:preserve-3d;transform:rotateY(-16deg) rotateX(0deg);animation:pr-tourne 14s linear infinite!important}
 header.top .prisme .pf{grid-area:1/1;display:flex!important;align-items:center;justify-content:center;gap:.3em;height:34px;padding:0 12px;border-radius:7px;white-space:nowrap;-webkit-backface-visibility:hidden;backface-visibility:hidden;color:#fff;outline:1px solid transparent;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
 header.top .prisme .pf1{transform:rotateX(0deg) translateZ(9.8px);background:linear-gradient(120deg,#ff1f4b,#8a0a3a)}
 header.top .prisme .pf1 .rouge{color:#ffe14d}
@@ -523,7 +528,8 @@ header.top .prisme .pf2{transform:rotateX(-120deg) translateZ(9.8px);background:
 header.top .prisme .pf2 .rouge{color:#ff1f4b;text-shadow:0 0 6px #fff}
 header.top .prisme .pf3{transform:rotateX(-240deg) translateZ(9.8px);background:linear-gradient(120deg,#0b0716,#1d1450);box-shadow:inset 0 0 0 2px #ff1f4b,0 0 12px rgba(255,31,75,.6)}
 @keyframes pr-tourne{from{transform:rotateY(-16deg) rotateX(0deg)}to{transform:rotateY(-16deg) rotateX(360deg)}}
-@media (prefers-reduced-motion:reduce){header.top .prisme .pr-in{animation:none}}
+@media (prefers-reduced-motion:reduce){header.top .prisme .pr-in{animation:none!important}}
+@media (max-width:1100px){header.top .brand .nom.prisme{display:none!important}}   /* le site y cache déjà le nom : pas de pastille vide */
 
 @font-face{font-family:"Orbitron";src:url(/orbitron.woff2) format("woff2");font-weight:400 900;font-display:swap}
 h1,section>h2,.tete h2,.related h2,header.top a.brand,.une-txt b{font-family:"Orbitron",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
