@@ -650,6 +650,29 @@ background:rgba(21,16,42,.98);border:1px solid var(--trait);border-top:0;border-
 .mega-panneau .vitrine img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover}
 .mega-panneau .vitrine span{display:block;padding:8px 10px;font-weight:600;color:#fff;font-size:13px}
 .mega-panneau .btn.contour{margin-top:10px;text-align:center;justify-content:center;border:1px solid var(--violet);background:transparent}
+/* 20/11/2026 (CyberBob : « moche avec juste les 3 colonnes » quand on passe la souris sur Les mix) : sur ordinateur, le panneau tient dans
+ la largeur du site, centré, cadre néon comme les bannières ; les styles en tuiles sur deux colonnes ; un titre de couleur par colonne.
+ Le menu du téléphone (≤ 820 px) ne change pas. */
+@media (min-width:821px){
+.mega-panneau{left:50%;right:auto;transform:translateX(-50%);width:min(1200px,calc(100vw - 32px));top:calc(100% + 10px);
+grid-template-columns:1.7fr 1fr 1fr 1.15fr;gap:0;padding:0;border-radius:20px;border:1px solid rgba(255,60,200,.45);
+background:linear-gradient(160deg,rgba(32,18,64,.98),rgba(14,10,32,.98) 60%);box-shadow:0 0 0 1px rgba(80,200,255,.12),0 0 30px rgba(255,60,200,.25),0 30px 60px rgba(0,0,0,.65)}
+.mega-panneau::before{content:"";position:absolute;left:0;right:0;top:-12px;height:12px}
+.mega-panneau .col{padding:22px 22px 20px;border-left:1px solid rgba(255,255,255,.07)}
+.mega-panneau .col:first-child{border-left:0;display:grid;grid-template-columns:1fr 1fr;gap:6px;align-content:start}
+.mega-panneau .col:last-child{background:rgba(255,60,200,.05);border-radius:0 20px 20px 0}
+.mega-panneau .col>b{font-family:Orbitron,sans-serif;letter-spacing:.14em;color:#ff5fd2;text-shadow:0 0 10px rgba(255,60,200,.6);margin:0 0 14px}
+.mega-panneau .col:nth-child(2)>b{color:#5fe1ff;text-shadow:0 0 10px rgba(80,200,255,.6)}
+.mega-panneau .col:nth-child(3)>b{color:#b48cff;text-shadow:0 0 10px rgba(140,92,255,.6)}
+.mega-panneau .col:first-child>b,.mega-panneau .col:first-child>a.fort,.mega-panneau .col:first-child>a.voir{grid-column:1/-1}
+.mega-panneau .col:first-child>a:not(.fort):not(.voir){border:1px solid rgba(255,255,255,.09);background:rgba(255,255,255,.035);border-radius:10px;padding:8px 10px;
+white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.mega-panneau .col:first-child>a:not(.fort):not(.voir):hover{border-color:rgba(255,60,200,.6);box-shadow:0 0 12px rgba(255,60,200,.3)}
+.mega-panneau a.fort{background:linear-gradient(90deg,#ff3cac,#784ba0 60%,#2b86c5);border-radius:10px;padding:9px 12px;text-align:center;margin-bottom:4px}
+.mega-panneau .col:nth-child(2) a,.mega-panneau .col:nth-child(3) a{padding:8px 10px;border-radius:9px}
+.mega-panneau .col:nth-child(2) a:hover{box-shadow:inset 3px 0 0 #5fe1ff}.mega-panneau .col:nth-child(3) a:hover{box-shadow:inset 3px 0 0 #b48cff}
+.mega-panneau .vitrine{border-color:rgba(255,60,200,.55);box-shadow:0 0 18px rgba(255,60,200,.25)}
+}
 header.top .droite{display:flex;align-items:center;gap:10px;flex:none}
 .ic-fav{position:relative;display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;text-decoration:none;
 background:rgba(255,255,255,.06);border:1px solid var(--trait);font-size:17px}
