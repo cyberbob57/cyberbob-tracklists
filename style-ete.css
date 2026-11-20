@@ -501,6 +501,17 @@ html body .r-ronds a,html body .r-reseaux a{color:var(--c);border-color:var(--c)
 html body .r-ronds a:hover,html body .r-reseaux a:hover,html body .r-reseaux a:focus-visible{background:color-mix(in srgb,var(--c) 28%,transparent);box-shadow:0 0 16px color-mix(in srgb,var(--c) 70%,transparent)}
 html body .r-ronds a[aria-label="Instagram"],html body .r-reseaux a[aria-label="Instagram"]{color:#fff;background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fd5949 45%,#d6249f 60%,#285aeb 90%);border-color:#e1306c}
 .materiel h2 .logo-mat{width:40px;height:40px;object-fit:contain;vertical-align:middle;border-radius:10px;background:#fff;padding:4px;margin-right:6px;box-sizing:border-box}
+/* 21/11/2026, CyberBob : « CyberBob in The Mix » en haut à gauche tourne comme sur un prisme à 3 faces, chaque face avec un fond différent */
+header.top .brand .nom.prisme{display:inline-block;perspective:420px;height:34px;line-height:34px}
+header.top .prisme .pr-in{display:grid;height:34px;transform-style:preserve-3d;transform:translateZ(-9.8px);animation:pr-tourne 9s cubic-bezier(.7,0,.3,1) infinite}
+header.top .prisme .pf{grid-area:1/1;display:flex;align-items:center;justify-content:center;gap:.3em;height:34px;padding:0 12px;border-radius:7px;white-space:nowrap;-webkit-backface-visibility:hidden;backface-visibility:hidden;color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
+header.top .prisme .pf1{transform:rotateX(0deg) translateZ(9.8px);background:linear-gradient(120deg,#ff1f4b,#8a0a3a)}
+header.top .prisme .pf1 .rouge{color:#ffe14d}
+header.top .prisme .pf2{transform:rotateX(-120deg) translateZ(9.8px);background:linear-gradient(120deg,#8a5cff,#2ea8ff)}
+header.top .prisme .pf2 .rouge{color:#ff1f4b;text-shadow:0 0 6px #fff}
+header.top .prisme .pf3{transform:rotateX(-240deg) translateZ(9.8px);background:linear-gradient(120deg,#0b0716,#1d1450);box-shadow:inset 0 0 0 2px #ff1f4b,0 0 12px rgba(255,31,75,.6)}
+@keyframes pr-tourne{0%,28%{transform:translateZ(-9.8px) rotateX(0deg)}33%,61%{transform:translateZ(-9.8px) rotateX(120deg)}66%,94%{transform:translateZ(-9.8px) rotateX(240deg)}100%{transform:translateZ(-9.8px) rotateX(360deg)}}
+@media (prefers-reduced-motion:reduce){header.top .prisme .pr-in{animation:none}}
 
 @font-face{font-family:"Orbitron";src:url(/orbitron.woff2) format("woff2");font-weight:400 900;font-display:swap}
 h1,section>h2,.tete h2,.related h2,header.top a.brand,.une-txt b{font-family:"Orbitron",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
