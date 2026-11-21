@@ -527,6 +527,15 @@ html body header.top .zone-rech kbd{display:none}}
 .mat-grille .materiel:first-child{grid-column:1/-1}
 .mat-grille .materiel h2 small{white-space:nowrap}
 @media (max-width:1000px){.mat-grille{grid-template-columns:repeat(2,minmax(0,1fr))}.mat-grille .materiel:last-child{grid-column:1/-1}}@media (max-width:640px){.mat-grille{grid-template-columns:1fr}}
+/* 21/11/2026 : la carte DJ.Studio, texte à gauche et l'écran du logiciel à droite dans un cadre néon jaune */
+html body .mat-grille .materiel.mat-large{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:28px;align-items:start}
+.mat-large>h2,.mat-large>p,.mat-large>.btn{grid-column:1}html body .mat-grille .mat-large>.btn{align-self:start;justify-self:start;margin-top:6px!important}
+.mat-large>.mat-visuel{grid-column:2;grid-row:1/span 3;align-self:stretch;justify-self:end;height:0;min-height:100%;box-sizing:border-box;display:flex}
+.mat-large>.mat-visuel img{height:100%;width:auto;max-width:100%;object-fit:contain}   /* la carte garde sa hauteur : l'image s'y adapte */
+.mat-visuel{display:block;border-radius:14px;padding:6px;background:linear-gradient(135deg,#ffe600,#ff2d55 55%,#8a5cff);box-shadow:0 0 22px rgba(255,230,0,.35),0 10px 30px rgba(0,0,0,.45);transition:transform .2s,box-shadow .2s}
+.mat-visuel img{display:block;width:100%;height:auto;border-radius:9px}
+.mat-visuel:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(255,230,0,.55),0 14px 34px rgba(0,0,0,.5)}
+@media (max-width:860px){html body .mat-grille .materiel.mat-large{grid-template-columns:minmax(0,1fr);grid-template-rows:none}.mat-large>.mat-visuel{grid-column:1;grid-row:auto;margin-top:16px;justify-self:start}}
 /* 3. pied de page : le logo RSS (déjà dans les liens du bas) ne reste plus seul sur sa ligne */
 html body .r-reseaux a[href$="/feed.xml"]{display:none}
 /* 4. « Où me trouver » aligné à gauche, comme le texte de la page */
