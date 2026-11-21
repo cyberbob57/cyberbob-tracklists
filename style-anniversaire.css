@@ -510,6 +510,10 @@ html body .r-ronds a[aria-label="YouTube"]:hover{background:rgba(255,0,51,.22)}
 /* 21/11/2026, CyberBob : « dans Chaîne YouTube de mix DJ, mets le logo YouTube devant en plus grand, et l'écriture aussi, tout en restant harmonieux » */
 html body .r-eyebrow{gap:12px;font-size:15px;font-weight:700;letter-spacing:.14em;color:#ff9db0;text-shadow:0 0 10px rgba(255,0,51,.45);margin-bottom:4px}
 html body .r-eyebrow svg{width:40px;height:40px;flex:none;filter:drop-shadow(0 0 8px rgba(255,0,51,.6))}
+/* 21/11/2026, CyberBob : « mets une bulle au survol de chaque lien (Spotify, SoundCloud, Facebook…) dans le pied de page et dans Qui est CyberBob » */
+html body .r-ronds a,html body .r-reseaux a{position:relative}
+html body .r-ronds a[aria-label]::before,html body .r-reseaux a[aria-label]::before{content:attr(aria-label);position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,4px);white-space:nowrap;padding:5px 10px;border-radius:8px;background:#0b0716;color:#fff;font:700 13px/1.2 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:0;border:1px solid var(--c,#ff1f4b);box-shadow:0 0 12px color-mix(in srgb,var(--c,#ff1f4b) 55%,transparent);opacity:0;pointer-events:none;transition:opacity .15s,transform .15s;z-index:30}
+html body .r-ronds a[aria-label]:hover::before,html body .r-reseaux a[aria-label]:hover::before,html body .r-ronds a[aria-label]:focus-visible::before,html body .r-reseaux a[aria-label]:focus-visible::before{opacity:1;transform:translate(-50%,0)}
 /* 21/11/2026, CyberBob : « mets le code DJ.Studio avec un fond jaune » (le jaune du logo DJ.Studio) */
 html body .code-promo{background:#ffe600;color:#111;font-weight:800;box-shadow:0 0 12px rgba(255,230,0,.55)}
 /* 21/11/2026 : les logos des radios (page des passages) sont des liens vers le site officiel */
