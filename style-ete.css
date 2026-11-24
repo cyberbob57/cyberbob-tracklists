@@ -551,6 +551,16 @@ html body .r-radios:hover .r-defil-in{animation-play-state:paused}
 /* 21/11/2026, CyberBob : « mets le code DJ.Studio avec un fond jaune » (le jaune du logo DJ.Studio) */
 html body .code-promo{background:#ffe600;color:#111;font-weight:800;box-shadow:0 0 12px rgba(255,230,0,.55)}
 /* 21/11/2026 : les logos des radios (page des passages) sont des liens vers le site officiel */
+.qui-radios,.qui-mixes{list-style:none;padding-left:0}.qui-mixes li{display:flex;align-items:center;gap:10px;margin:8px 0}
+.qui-vig{width:80px;height:45px;object-fit:cover;border-radius:6px;flex:none;vertical-align:middle;margin-right:6px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
+.qui-frise .qui-vig{width:64px;height:36px}
+.qui-rond{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;display:inline-flex;align-items:center;justify-content:center;
+background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(255,255,255,.14);font-weight:700;font-size:14px}
+.qui-rond img{width:40px;height:40px;object-fit:cover;border-radius:50%}.qui-rond .rx-dessin{object-fit:contain;background:#111}.qui-rond .rx-init{font-size:14px}
+.qui-frise{list-style:none;margin:10px 0 18px;padding:0 0 0 16px;border-left:2px solid rgba(255,45,85,.55)}
+.qui-frise li{position:relative;margin:0 0 10px;line-height:1.5}.qui-frise li::before{content:"";position:absolute;left:-22px;top:.55em;width:10px;height:10px;border-radius:50%;background:#ff2d55;box-shadow:0 0 8px rgba(255,45,85,.7)}
+.qui-frise time{font-weight:700;color:#ffd166;margin-right:6px;font-variant-numeric:tabular-nums}.qui-radios li{display:flex;align-items:center;gap:10px;margin:8px 0}
+.qui-radio-logo{width:40px;height:40px;object-fit:contain;border-radius:50%;background:rgba(255,255,255,.06);box-shadow:0 0 0 1px rgba(255,255,255,.14);flex:none}
 a.p-rond{display:block;cursor:pointer}a.p-logo-lien{display:inline-flex;line-height:0}a.p-logo-lien:hover .p-logo{transform:scale(1.08);box-shadow:0 0 12px rgba(255,45,85,.7)}
 .p-logo{transition:transform .15s,box-shadow .15s}.p-aff.p-sans>a{display:contents}
 @media (max-width:640px){html body .r-eyebrow{font-size:13px;gap:10px}html body .r-eyebrow svg{width:32px;height:32px}}
