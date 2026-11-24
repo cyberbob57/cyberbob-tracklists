@@ -1437,6 +1437,13 @@ header.top.hab-bandeau{margin-top:-18px!important;padding-top:40px!important;bor
 /* même hauteur d'en-tête pour toutes les saisons à bannière (« uniformise ») ; le trait du haut du cadre traversait la bannière (« une démarcation ») */
 @media (max-width:640px){header.top.hab-bandeau{padding-top:22px!important}}
 @keyframes hab-lueur{0%,100%{filter:drop-shadow(0 0 6px rgba(255,200,80,.6))}50%{filter:drop-shadow(0 0 16px rgba(255,220,120,1))}}
+/* 24/11/2026 (habillage 10 000, CyberBob : « je vois pas de ballon ni de confettis ») : ces mouvements n'étaient écrits que dans le style
+   d'UNE saison ; une autre qui s'en servait restait figée hors de l'écran (confettis de l'anniversaire, cœurs de la Saint-Valentin,
+   mouettes de l'été). Ils vivent ici, communs à toutes les saisons. */
+@keyframes hab-vole{0%{transform:translate(0,0) scaleX(1)}25%{transform:translate(28vw,-60px) scaleX(1)}50%{transform:translate(56vw,20px) scaleX(-1)}75%{transform:translate(84vw,-40px) scaleX(-1)}100%{transform:translate(112vw,10px) scaleX(1)}}
+@keyframes hab-flotte{0%{transform:translate(0,0)}25%{transform:translate(28vw,-30px)}50%{transform:translate(56vw,30px)}75%{transform:translate(84vw,-20px)}100%{transform:translate(115vw,0)}}
+@keyframes hab-neige{0%{transform:translate(0,0) rotate(0)}50%{transform:translate(30px,50vh) rotate(180deg)}100%{transform:translate(-20px,105vh) rotate(360deg)}}
+@keyframes hab-monte{0%{transform:translate(0,0) rotate(-4deg)}50%{transform:translate(24px,-55vh) rotate(5deg)}100%{transform:translate(-16px,-115vh) rotate(-4deg)}}
 @media (max-width:640px){header.top .hab-coin{width:80px;height:80px}}
 @media (prefers-reduced-motion:reduce){.hab i,.hab-abonne{animation:none!important}}
 /* téléphone (CyberBob, 01/11 : « quand on scrolle, le 2 ans gêne la lecture », « entre la platine et le contour droit du cadre général »,
@@ -1445,12 +1452,12 @@ header.top.hab-bandeau{margin-top:-18px!important;padding-top:40px!important;bor
 .hab-carte{display:none}
 @media (max-width:820px){.hab i.annonce,.hab i.boule,.hab i.lune,.hab i.soleil,.hab i.cupidon{display:none}
  .r-chaine-in{position:relative}.hab-carte{display:block;position:absolute;top:18px;left:190px;right:16px;height:130px;background:center/contain no-repeat;pointer-events:none}
- .hab-carte.anniversaire{background-image:var(--hab-annonce);filter:drop-shadow(0 0 16px rgba(255,210,63,.6))}
+ .hab-carte.anniversaire,.hab-carte.dixmille{background-image:var(--hab-annonce);filter:drop-shadow(0 0 16px rgba(255,210,63,.6))}
  .hab-carte.halloween{background-image:var(--hab-lune);height:150px;top:8px;filter:drop-shadow(0 0 30px rgba(255,220,120,.8))}
  .hab-carte.noel{background-image:var(--hab-sapin);height:160px;top:4px;filter:drop-shadow(0 0 16px rgba(74,222,128,.7))}
  .hab-carte.ete{background-image:var(--hab-soleil);height:150px;top:8px;filter:drop-shadow(0 0 30px rgba(255,210,63,.7))}
  .hab-carte.love{background-image:var(--hab-cupidon);height:150px;top:8px;filter:drop-shadow(0 0 20px rgba(255,111,168,.7))}}
-@media (max-width:640px){.hab-carte{left:140px;top:14px;height:110px}.hab-carte.halloween,.hab-carte.ete,.hab-carte.love{height:130px;top:6px}.hab-carte.noel{height:140px;top:0}.hab.hab-anniversaire i.ballon{width:40px;height:54px}.hab.hab-anniversaire i.boule{width:90px;height:90px;top:70px}.hab.hab-anniversaire i.confetti:nth-of-type(n+9){display:none}}
+@media (max-width:640px){.hab-carte{left:140px;top:14px;height:110px}.hab-carte.halloween,.hab-carte.ete,.hab-carte.love{height:130px;top:6px}.hab-carte.noel{height:140px;top:0}}
 
 :root{--bleu:#19d3c5;--rouge:#ff9a3c;--degrade:linear-gradient(90deg,#19d3c5,#ffd23f,#ff9a3c)}
 body{background:radial-gradient(900px 500px at 0% 0%,rgba(25,211,197,.34),transparent 60%),radial-gradient(900px 500px at 100% 100%,rgba(255,154,60,.34),transparent 60%),linear-gradient(160deg,#06253a 0%,#0a3550 45%,#3a1a4a 75%,#5a2a10 100%);background-attachment:fixed}
@@ -1465,6 +1472,11 @@ body{background:radial-gradient(900px 500px at 0% 0%,rgba(25,211,197,.34),transp
 header.top{border-color:#19d3c5!important;box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 22px rgba(25,211,197,.35)!important}
 @media (max-width:640px){.hab.hab-ete i.mouette{width:44px;height:22px}.hab.hab-ete i.soleil{width:100px;height:100px;top:70px}}
 
-@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love{width:52px;height:52px;margin-left:8px;animation:none}
+/* 24/11/2026 (vérification téléphone de l'habillage 10 000) : ces règles étaient dans CSS_COMMUN, AVANT le style de la saison, qui les
+   écrasait (ballons restés à 70 px) ; et :nth-of-type compte aussi les 6 ballons, si bien que « n+9 » ne laissait que 2 confettis sur 14.
+   Ballons réduits, 8 confettis gardés (7e à 14e <i>), pour l'anniversaire comme pour les 10 000. */
+@media (max-width:640px){.hab.hab-anniversaire i.ballon,.hab.hab-dixmille i.ballon{width:40px!important;height:54px!important}
+ .hab.hab-anniversaire i.confetti:nth-of-type(n+15),.hab.hab-dixmille i.confetti:nth-of-type(n+15){display:none}}
+@media (max-width:640px){.hab-abonne,.hab-abonne.halloween,.hab-abonne.noel,.hab-abonne.ete,.hab-abonne.anniversaire,.hab-abonne.love,.hab-abonne.dixmille{width:52px;height:52px;margin-left:8px;animation:none}
  .hab-abonne.ete{width:64px;height:32px}}
 :root{--hab-bandeau:url(/deco/habillage-ete-bandeau.webp);--hab-lunettes:url(/deco/habillage-ete-lunettes.webp);--hab-mouette:url(/deco/habillage-ete-mouette.webp);--hab-palmier:url(/deco/habillage-ete-palmier.webp);--hab-soleil:url(/deco/habillage-ete-soleil.webp)}
