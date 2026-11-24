@@ -554,6 +554,8 @@ html body .code-promo{background:#ffe600;color:#111;font-weight:800;box-shadow:0
 .qui-radios,.qui-mixes{list-style:none;padding-left:0}.qui-mixes li{display:flex;align-items:center;gap:10px;margin:8px 0}
 .qui-vig{width:80px;height:45px;object-fit:cover;border-radius:6px;flex:none;vertical-align:middle;margin-right:6px;box-shadow:0 0 0 1px rgba(255,255,255,.14)}
 .qui-frise .qui-vig{width:64px;height:36px}
+.qui-fans{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:stretch}.qui-fans .citation{margin:0}
+@media (max-width:700px){.qui-fans{grid-template-columns:1fr}}
 .qui-rond{width:40px;height:40px;border-radius:50%;overflow:hidden;flex:none;display:inline-flex;align-items:center;justify-content:center;
 background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(255,255,255,.14);font-weight:700;font-size:14px}
 .qui-rond img{width:40px;height:40px;object-fit:cover;border-radius:50%}.qui-rond .rx-dessin{object-fit:contain;background:#111}.qui-rond .rx-init{font-size:14px}
