@@ -563,6 +563,36 @@ background:rgba(255,255,255,.08);box-shadow:0 0 0 1px rgba(255,255,255,.14);font
 .qui-frise li{position:relative;margin:0 0 10px;line-height:1.5}.qui-frise li::before{content:"";position:absolute;left:-22px;top:.55em;width:10px;height:10px;border-radius:50%;background:#ff2d55;box-shadow:0 0 8px rgba(255,45,85,.7)}
 .qui-frise time{font-weight:700;color:#ffd166;margin-right:6px;font-variant-numeric:tabular-nums}.qui-radios li{display:flex;align-items:center;gap:10px;margin:8px 0}
 .qui-radio-logo{width:40px;height:40px;object-fit:contain;border-radius:50%;background:rgba(255,255,255,.06);box-shadow:0 0 0 1px rgba(255,255,255,.14);flex:none}
+/* 25/11/2026, CyberBob : « vois pour rendre plus jolie la partie qui est cyberbob » (aperçu validé) — présentation seule : l'en-tête en carte,
+   les chiffres juste dessous, chaque rubrique dans sa carte, deux par deux sur ordinateur, une colonne sur téléphone ; le parcours en
+   une frise verticale, une étape par ligne (« les vignettes sont trop grosses sur le parcours », puis « on a du mal à respecter la
+   chronologie et la lire » : la grille de cartes se lisait mal, retour à une frise de haut en bas, vignettes petites) */
+.legale.qui{max-width:1200px}
+.qui-hero{background:linear-gradient(135deg,rgba(255,45,85,.16),rgba(138,92,255,.14) 45%,rgba(46,168,255,.12)),var(--card);border:1px solid var(--line);border-radius:22px;padding:30px 34px;margin:4px 0 18px;box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.qui-hero .qui-tete{margin:0;gap:34px;flex-wrap:nowrap}.qui-hero .qui-photo{width:220px;height:220px}
+.qui-hero h1{font-size:44px;line-height:1.1;margin:0 0 12px}
+html body .qui-hero p.pitch{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;margin:0 0 16px;font-size:20px;line-height:1.5;color:var(--ink);max-width:56ch}
+.qui-hero .qui-mosa{margin:0}.qui-hero .qui-mosa a{display:inline-block;padding:8px 16px;border-radius:999px;background:rgba(255,255,255,.07);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:600}
+.qui-hero .qui-mosa a:hover{background:rgba(255,45,85,.22);border-color:var(--rouge)}
+.qui-cache{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.qui .tuiles{grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin:0 0 8px}.qui .tuile{text-align:center;padding:18px 14px;border-radius:16px}.qui .tuile b{font-size:38px}
+.qui .qui-note{text-align:center;margin:0 0 18px}
+.qui-duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:18px;margin:0 0 18px}
+.qui-bloc{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px 26px;margin:0 0 18px;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.qui-duo>.qui-bloc{margin:0}.qui-bloc>h2{margin:0 0 14px;font-size:22px}
+.qui-bloc>p{line-height:1.65}.qui-bloc>p:last-child{margin-bottom:0}
+.qui .qui-frise{margin:0 0 0 8px;padding:0 0 0 22px;border-left:2px solid rgba(255,45,85,.55)}
+.qui .qui-frise li{display:flex;align-items:center;flex-wrap:wrap;gap:4px 10px;margin:0 0 8px;padding:8px 14px;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:10px;line-height:1.4}
+.qui .qui-frise li:last-child{margin-bottom:0}.qui .qui-frise li::before{left:-29px;top:50%;transform:translateY(-50%)}
+.qui .qui-frise time{min-width:96px;margin:0}.qui .qui-frise li:has(img){border-color:rgba(255,209,102,.45)}.qui .qui-frise li:has(img)::before{background:#ffd166;box-shadow:0 0 8px rgba(255,209,102,.7)}
+.qui .qui-frise .qui-vig{width:64px;height:36px;margin:0}
+.qui .qui-liste{margin:0}.qui .qui-liste li{padding:8px 10px;margin:0 0 4px;border-radius:10px;transition:background .15s}.qui .qui-liste li:hover{background:rgba(255,255,255,.06)}
+.qui .qui-mixes .qui-vig{width:112px;height:63px}.qui .qui-rond,.qui .qui-rond img,.qui .qui-radio-logo{width:48px;height:48px}
+.qui .qui-fans{margin:0 0 12px}
+.qui .qui-signature{text-align:center;font-size:34px;margin:30px 0 10px;background:var(--degrade);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (max-width:760px){.qui-hero{padding:22px 18px}.qui-hero .qui-tete{flex-wrap:wrap;gap:16px}.qui-hero .qui-photo{width:150px;height:150px}.qui-hero h1{font-size:32px}
+html body .qui-hero p.pitch{font-size:17px}.qui-bloc{padding:18px 16px}.qui-duo{grid-template-columns:1fr}.qui .tuiles{grid-template-columns:1fr 1fr}.qui .tuile b{font-size:30px}
+.qui .qui-frise li{padding:8px 10px}.qui .qui-frise time{min-width:0}.qui .qui-mixes .qui-vig{width:88px;height:50px}}
 a.p-rond{display:block;cursor:pointer}a.p-logo-lien{display:inline-flex;line-height:0}a.p-logo-lien:hover .p-logo{transform:scale(1.08);box-shadow:0 0 12px rgba(255,45,85,.7)}
 .p-logo{transition:transform .15s,box-shadow .15s}.p-aff.p-sans>a{display:contents}
 @media (max-width:640px){html body .r-eyebrow{font-size:13px;gap:10px}html body .r-eyebrow svg{width:32px;height:32px}}
