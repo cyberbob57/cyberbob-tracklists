@@ -1,6 +1,6 @@
 # CyberBob in The Mix — toutes les tracklists
 
-> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 196 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
+> CyberBob est un DJ amateur français (Moselle). Mix et megamix gratuits sur YouTube : variété française, années 80 et 90, disco, italo, remix. Un nouveau mix chaque lundi (international) et chaque vendredi (français). Ce fichier donne, pour chacun des 197 mix, la tracklist titre par titre avec la minute exacte ; chaque page du site mène à la vidéo à cette minute.
 
 > CyberBob is an amateur French DJ. Free mixes and megamixes on YouTube; this file lists every mix with its full tracklist and exact timestamps.
 
@@ -8,6 +8,19 @@
 - Site : https://djcyberbob.com (anglais : https://djcyberbob.com/en/)
 - Tous les mix : https://djcyberbob.com/mix/
 - Flux RSS : https://djcyberbob.com/feed.xml — Agenda des sorties : https://djcyberbob.com/agenda.ics
+
+## Mod-j Chill Français Coucher de Soleil - L'Été Indien
+
+- Date : 2026-11-27 — Genre : Variété française - 80s/90s
+- Page : https://djcyberbob.com/m/I4bTYaDnijo.html
+- Vidéo : https://www.youtube.com/watch?v=I4bTYaDnijo
+
+0:00 Mod-j – Et si tu n'existais pas
+2:29 Mod-j – Pauvres Diables
+4:56 Mod-j – Besoin de rien, envie de toi
+7:37 Mod-j – L'Été Indien
+9:52 Mod-j – L'Amour à la plage (Extended Mix)
+11:45 Mod-j – Joue Pas
 
 ## Pop Dance 90s Faire la Fête - Coco Jamboo, Britney Spears
 
